@@ -35,9 +35,9 @@ class IdentificacionInmueble(models.Model):
 
 # Sección 2
 class PlanoUbicacion(models.Model):
-    imagen_plano = models.ImageField(upload_to="plano_ubicacion")
-    latitud = models.CharField(max_length=100)
-    longitud = models.CharField(max_length=100)
+    imagen_plano = models.ImageField(upload_to="plano_ubicacion", blank=True, default='')
+    latitud = models.CharField(max_length=100, blank=True, default='')
+    longitud = models.CharField(max_length=100, blank=True, default='')
     id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -48,7 +48,7 @@ class PlanoUbicacion(models.Model):
 
 # Sección 3
 class FotografiaGeneral(models.Model):
-    imagen_fotografia = models.ImageField(upload_to="fotografia_general")
+    imagen_fotografia = models.ImageField(upload_to="fotografia_general", blank=True, default='')
     id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -59,8 +59,8 @@ class FotografiaGeneral(models.Model):
 
 # Sección 4
 class FotografiaContexto(models.Model):
-    registro_fotografico_1 = models.ImageField(upload_to="fotografia_contexto")
-    registro_fotografico_2 = models.ImageField(upload_to="fotografia_contexto")
+    registro_fotografico_1 = models.ImageField(upload_to="fotografia_contexto", blank=True, default='')
+    registro_fotografico_2 = models.ImageField(upload_to="fotografia_contexto", blank=True, default='')
     fecha_registro_fotografico = models.DateField()
     id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
@@ -72,10 +72,10 @@ class FotografiaContexto(models.Model):
 
 # Sección 5
 class ResenaPatrimonial(models.Model):
-    valor_urbano = models.TextField()
-    valor_arquitecnico = models.TextField()
-    valor_historico = models.TextField()
-    valor_economico_social = models.TextField()
+    valor_urbano = models.TextField(blank=True, default='')
+    valor_arquitecnico = models.TextField(blank=True, default='')
+    valor_historico = models.TextField(blank=True, default='')
+    valor_economico_social = models.TextField(blank=True, default='')
     id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -86,23 +86,23 @@ class ResenaPatrimonial(models.Model):
 
 # Sección 6
 class ValoracionAtributos(models.Model):
-    valor_urbano_a = models.PositiveSmallIntegerField(default=0)
-    valor_urbano_b = models.PositiveSmallIntegerField(default=0)
-    valor_urbano_c = models.PositiveSmallIntegerField(default=0)
+    valor_urbano_a = models.PositiveSmallIntegerField(default=0, blank=True)
+    valor_urbano_b = models.PositiveSmallIntegerField(default=0, blank=True)
+    valor_urbano_c = models.PositiveSmallIntegerField(default=0, blank=True)
 
-    valor_arquitecnico_a = models.PositiveSmallIntegerField(default=0)
-    valor_arquitecnico_b = models.PositiveSmallIntegerField(default=0)
-    valor_arquitecnico_c = models.PositiveSmallIntegerField(default=0)
+    valor_arquitecnico_a = models.PositiveSmallIntegerField(default=0, blank=True)
+    valor_arquitecnico_b = models.PositiveSmallIntegerField(default=0, blank=True)
+    valor_arquitecnico_c = models.PositiveSmallIntegerField(default=0, blank=True)
 
-    valor_historico_a = models.PositiveSmallIntegerField(default=0)
-    valor_historico_b = models.PositiveSmallIntegerField(default=0)
+    valor_historico_a = models.PositiveSmallIntegerField(default=0, blank=True)
+    valor_historico_b = models.PositiveSmallIntegerField(default=0, blank=True)
 
-    valor_economico_social_a = models.PositiveSmallIntegerField(default=0)
-    valor_economico_social_b = models.PositiveSmallIntegerField(default=0)
-    valor_economico_social_c = models.PositiveSmallIntegerField(default=0)
+    valor_economico_social_a = models.PositiveSmallIntegerField(default=0, blank=True)
+    valor_economico_social_b = models.PositiveSmallIntegerField(default=0, blank=True)
+    valor_economico_social_c = models.PositiveSmallIntegerField(default=0, blank=True)
 
-    zona_de_conservacion = models.CharField(max_length=255)
-    identificacion_zch = models.CharField(max_length=100)
+    zona_de_conservacion = models.CharField(max_length=255, blank=True, default='')
+    identificacion_zch = models.CharField(max_length=100, blank=True, default='')
     id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -159,14 +159,14 @@ class InformacionTecnica(models.Model):
     piso_actual_primer_piso = models.CharField(max_length=255, blank=True, default='')
     piso_actual_pisos_superiores = models.CharField(max_length=255, blank=True, default='')
 
-    anio_construccion = models.CharField(max_length=50, choices=PERIODOS_CONSTRUCCION, default='ANTERIOR A 1900')
+    anio_construccion = models.CharField(max_length=50, choices=PERIODOS_CONSTRUCCION, default='ANTERIOR A 1900', blank=True)
 
-    tipo_propiedad = models.CharField(max_length=50, choices=TIPO_PROPIEDAD, default='PARTICULAR')
-    tipo_usuario = models.CharField(max_length=50, choices=TIPO_USUARIO, default='PROPIETARIO')
+    tipo_propiedad = models.CharField(max_length=50, choices=TIPO_PROPIEDAD, default='PARTICULAR', blank=True)
+    tipo_usuario = models.CharField(max_length=50, choices=TIPO_USUARIO, default='PROPIETARIO', blank=True)
 
-    regimen_propiedad = models.CharField(max_length=50, choices=REGIMEN_PROPIEDAD, default='INDIVIDUAL')
+    regimen_propiedad = models.CharField(max_length=50, choices=REGIMEN_PROPIEDAD, default='INDIVIDUAL', blank=True)
 
-    afectacion_actual = models.CharField(max_length=50, choices=AFECTACION_ACTUAL, default='DECLARACION DE UTILIDAD PUBLICA')
+    afectacion_actual = models.CharField(max_length=50, choices=AFECTACION_ACTUAL, default='DECLARACION DE UTILIDAD PUBLICA', blank=True)
 
     observaciones = models.TextField(blank=True, default='')
 
@@ -180,7 +180,7 @@ class InformacionTecnica(models.Model):
 
 # Sección 8
 TIPOLOGIA = [
-    
+
 ]
 # class CaracteristicasMorfologicas(models.Model):
     
