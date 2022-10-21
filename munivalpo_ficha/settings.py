@@ -76,7 +76,19 @@ WSGI_APPLICATION = 'munivalpo_ficha.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+if os.environ.get('HEROKU') and os.environ.get('HEROKU') == 'True':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'muni_valpo',
+            'USER': 'admin',
+            'PASSWORD': 'WyvVbRX67F3FQNPyNFXHxxorB033FUuF',
+            'HOST': 'qpv7cx.stackhero-network.com',
+            'PORT': '5432',
+        }
+    }
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
