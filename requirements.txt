@@ -1,0 +1,7 @@
+asgiref==3.5.2
+certifi @ file:///C:/b/abs_4f5wo627a3/croots/recipe/certifi_1663615677642/work/certifi
+Django==3.2.15
+Pillow==9.2.0
+pytz==2022.2.1
+sqlparse==0.4.2
+wincertstore==0.2
