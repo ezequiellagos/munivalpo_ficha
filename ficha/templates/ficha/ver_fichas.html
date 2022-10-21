@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block main_content %}
+<section class="container">
+    <div class="row">
+        <div class="col-12 pt-3">
+            <table id="tabla_fichas" class="display table table-striped table-bordered table-sm" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Rol</th>
+                        <th>Identificación inmueble</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ficha in fichas %}
+                    <tr>
+                        <td>{{ ficha.id_plano }}</td>
+                        <td>{{ ficha.rol }}</td>
+                        <td>{{ ficha.calle }}, {{ficha.numero}}, {{ ficha.comuna }}</td>
+                        <td>
+                            <a href="{% url 'ver_ficha' ficha.id_plano %}" class="btn btn-primary">Ver</a>
+                            <a href="{% url 'editar_ficha' ficha.id_plano %}" class="btn btn-warning">Editar</a>
+                            <a href="{% url 'exportar_pdf' ficha.id_plano %}" class="btn btn-danger">PDF</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td>No hay datos</td>
+                        <td>No hay datos</td>
+                        <td>No hay datos</td>
+                        <td>No hay datos</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock main_content %}
+
+{% block custom_js %}
+<script>
+    $(document).ready( function () {
+        $('#tabla_fichas').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.12.1/i18n/es-CL.json'
+            }
+        });
+    } );
+    
+</script>
+{% endblock custom_js %}

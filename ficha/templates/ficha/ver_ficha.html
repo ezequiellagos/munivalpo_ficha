@@ -1,0 +1,805 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block main_content %}
+<section>
+    <div class="container mt-3">
+
+        <div class="row m-3">
+            <div class="col-md-12">
+                <h1 class="text-center">Ficha de Valoración Inmueble de Conservación Histórica</h1>
+                <h2 class="text-center">Plan Regulador Comunal de Valparaíso</h2>
+            </div>
+        </div>
+
+        <div class="row m-3">
+            <div class="col-12">
+                <div class="accordion" id="accordionExample">
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                    
+                    <!-- 1.- Identificación del Inmueble -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                1.- Identificación del Inmueble
+                            </button>
+                        </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="rol">Rol</label>
+                                        <input type="text" class="form-control" id="rol" name="rol" placeholder="{{ identificacion_inmueble.rol }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="id_plano">ID Plano</label>
+                                        <input type="text" class="form-control" id="id_plano" name="id_plano" placeholder="{{ identificacion_inmueble.id_plano }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="unidad_vecinal">Unidad Vecinal</label>
+                                        <input type="text" class="form-control" id="unidad_vecinal" name="unidad_vecinal" placeholder="{{ identificacion_inmueble.unidad_vecinal }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="region">Región</label>
+                                        <input type="text" class="form-control" id="region" name="region" placeholder="{{ identificacion_inmueble.region }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="comuna">Comuna</label>
+                                        <select class="form-control" id="comuna" name="comuna" disabled>
+                                            <option value="{{ identificacion_inmueble.comuna }}" selected>{{ identificacion_inmueble.comuna }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="calle">Calle</label>
+                                        <input type="text" class="form-control" id="calle" name="{{ identificacion_inmueble.calle }}" placeholder="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="numero">Número</label>
+                                        <input type="text" class="form-control" id="numero" name="numero" placeholder="{{ identificacion_inmueble.numero }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="plan_cerro_poblacion">Plan/Cerro/Población</label>
+                                        <input type="text" class="form-control" id="plan_cerro_poblacion" name="plan_cerro_poblacion" placeholder="{{ identificacion_inmueble.plan_cerro_poblacion }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="denominacion_inmueble">Denominación inmueble</label>
+                                        <input type="text" class="form-control" id="denominacion_inmueble" name="denominacion_inmueble" placeholder="{{ identificacion_inmueble.denominacion_inmueble }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="autor">Autor</label>
+                                        <input type="text" class="form-control" id="autor" name="autor" placeholder="{{ identificacion_inmueble.autor }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                      </div>
+                    </div>
+    
+                    <!-- 2.- Plano ubicación -->
+                    <!-- 3.- Fotografía general -->
+                    <!-- 4.- Fotografía de contexto -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Fotografías
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="plano_ubicacion">2.- Plano Ubicación</label>
+                                        <br>
+                                        {% if plano_ubicacion.imagen_plano %}
+                                            <img src="{{ plano_ubicacion.imagen_plano.url }}" alt="plano_ubicacion" width="100px" class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#modal_plano_ubicacion">
+                                        {% else %}
+                                            <img src="https://via.placeholder.com/150" alt="plano_ubicacion" class="img-fluid">
+                                        {% endif %}
+                                        <!-- Modal Plano ubicacion -->
+                                        <div class="modal" tabindex="-1" id="modal_plano_ubicacion" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Plano Ubicación</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>
+                                                            {% if plano_ubicacion.imagen_plano %}
+                                                                <img src="{{ plano_ubicacion.imagen_plano.url }}" alt="plano_ubicacion" class="img-fluid">
+                                                            {% else %}
+                                                                <img src="https://via.placeholder.com/150" alt="plano_ubicacion" class="img-fluid">
+                                                            {% endif %}
+                                                        </p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Modal Plano ubicacion -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="latitud">Latitud</label>
+                                        <input type="text" class="form-control" id="latitud" name="latitud" placeholder="{{ plano_ubicacion.latitud }}" disabled>
+
+                                        <label class="form-label" for="longitud">Longitud</label>
+                                        <input type="text" class="form-control" id="longitud" name="longitud" placeholder="{{ plano_ubicacion.longitud }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="fotografia_general">3.- Fotografía de general</label>
+                                        <input type="file" class="form-control" id="fotografia_general" name="fotografia_general" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="fotografia_contexto_1">4.- Fotografía de contexto 1</label>
+                                        <input type="file" class="form-control" id="fotografia_contexto_1" name="fotografia_contexto_1" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="fotografia_contexto_2">Fotografía de contexto 2</label>
+                                        <input type="file" class="form-control" id="fotografia_contexto_2" name="fotografia_contexto_2" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <!-- 5.- Reseña de valores y atributos patrimoniales -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            5.- Reseña de valores y atributos patrimoniales
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse " aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="valor_urbano">Valor Urbano</label>
+                                        <textarea class="form-control" id="valor_urbano" name="valor_urbano" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="valor_arquitectonico">Valor Arquitectónico</label>
+                                        <textarea class="form-control" id="valor_arquitectonico" name="valor_arquitectonico" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="valor_historico">Valor Histórico</label>
+                                        <textarea class="form-control" id="valor_historico" name="valor_historico" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="valor_economico_social">Valor Económico / Social</label>
+                                        <textarea class="form-control" id="valor_economico_social" name="valor_economico_social" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <!-- 6.- Resumen valoración de atributos -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                6.- Resumen valoración de atributos
+                          </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse " aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <table class="table table-bordered table-sm">
+                                                <tr>
+                                                    <th rowspan="2">Valor</th>
+                                                    <th colspan="3">Atributos</th>
+                                                    <th rowspan="2">Puntos</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>A</th>
+                                                    <th>B</th>
+                                                    <th>C</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>URBANO</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="urbano_a" name="urbano_a" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="urbano_b" name="urbano_b" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="urbano_c" name="urbano_c" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ARQUITECTÓNICO</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="arquitectonico_a" name="arquitectonico_a" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="arquitectonico_b" name="arquitectonico_b" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="arquitectonico_c" name="arquitectonico_c" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>HISTÓRICO</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="historico_a" name="historico_a" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="historico_b" name="historico_b" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="historico_c" name="historico_c" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ECONÓMICO/SOCIAL</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="economico_social_a" name="economico_social_a" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="economico_social_b" name="economico_social_b" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="economico_social_c" name="economico_social_c" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">Puntaje Total</td>
+                                                    <td>
+                                                        <span></span>
+                                                    </td>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="zona_conservacion">Inserto en Zona de Conservación Histórica (LGUC) o Zona Típica (Ley 17.288)</label>
+                                            <select class="form-select" id="zona_conservacion" name="zona_conservacion">
+                                                <option value="1">Si</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="valor_urbano">Identificación ZCH o ZT</label>
+                                            <input type="text" class="form-control" id="identificacion_zch_zt" name="identificacion_zch_zt" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                          </div>
+                        </div>
+                    </div>
+    
+                    <!-- 7.- Información técnicas -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-5">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                                7.- Información técnicas
+                          </button>
+                        </h2>
+                        <div id="collapse-5" class="accordion-collapse collapse " aria-labelledby="heading-5" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <span class="form-label">Destino del Inmueble</span>
+                                            <table class="table table-bordered table-sm">
+                                                <tr>
+                                                    <th>Piso</th>
+                                                    <th>Original</th>
+                                                    <th>Actual</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Subsuelo</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="subsuelo_original" name="subsuelo_original" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="subsuelo_actual" name="subsuelo_actual" placeholder="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Primer piso</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="primer_piso_original" name="primer_piso_original" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="primer_piso_actual" name="primer_piso_actual" placeholder="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pisos superiores</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="pisos_superiores_original" name="pisos_superiores_original" placeholder="">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="pisos_superiores_actual" name="pisos_superiores_actual" placeholder="">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <span class="form-label">Año de Construcción</span>
+                                            <table class="table table-bordered table-sm">
+                                                <tr>
+                                                    <th>Anterior a 1900</th>
+                                                    <th>1901 - 1920</th>
+                                                    <th>1921 - 1940</th>
+                                                    <th>1941 - 1960</th>
+                                                    <th>1961 - 1970</th>
+                                                    <th>1971 - 1990</th>
+                                                    <th>Post 1990</th>
+                                                </tr>
+                                                <tr class="">
+                                                    <td>
+                                                        <div class="form-check mx-auto">
+                                                            <input class="form-check-input" type="radio" name="anio_construccion" id="anio_construccion1">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="anio_construccion" id="anio_construccion2">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="anio_construccion" id="anio_construccion3">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="anio_construccion" id="anio_construccion4">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="anio_construccion" id="anio_construccion5">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="anio_construccion" id="anio_construccion6">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="anio_construccion" id="anio_construccion7">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="tipo_propiedad">Tipo de Propiedad</label>
+                                            <select class="form-control" id="tipo_propiedad" name="tipo_propiedad">
+                                                <option value="1">Particular</option>
+                                                <option value="2">Fiscal</option>
+                                                <option value="3">Municipal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="tipo_usuario">Tipo de Usuario</label>
+                                            <select class="form-control" id="tipo_usuario" name="tipo_usuario">
+                                                <option value="1">Propietario</option>
+                                                <option value="2">Arrendatario</option>
+                                                <option value="3">Usufructuario</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="afectacion_actual">Afectación Actual</label>
+                                            <select class="form-control" id="afectacion_actual" name="afectacion_actual">
+                                                <option value="1">Declaración de utilidad pública</option>
+                                                <option value="2">Antejardín</option>
+                                                <option value="3">Otros</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="observaciones">Observaciones</label>
+                                            <textarea class="form-control" id="observaciones" name="observaciones" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="vigente_o_propuesta">Vigente o propuesta</label>
+                                            <select class="form-control" id="vigente_o_propuesta" name="vigente_o_propuesta">
+                                                <option value="V">Vigente</option>
+                                                <option value="P">Propuesta</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="declaratoria_vigente">Declaratorio vigente</label>
+                                            <input type="text" id="declaratoria_vigente" name="declaratoria_vigente" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 8.- Caracteristicas morfológicas -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-6">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+                                8.- Caracteristicas morfológicas
+                          </button>
+                        </h2>
+                        <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="tipologia">Tipología (Emplazamiento en manzana)</label>
+                                        <select class="form-control" id="tipologia" name="tipologia">
+                                            <option value="1">MANZANA</option>
+                                            <option value="2">ESQUINA</option>
+                                            <option value="3">ENTRE MEDIANEROS</option>
+                                            <option value="4">CABEZAL</option>
+                                            <option value="5">CRUCERO</option>
+                                            <option value="6">DOBLE FRENTE entre medianeros</option>
+                                            <option value="7">ANTEJARDINES</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="sistema_agrupamiento">Sistema de Agrupamiento</label>
+                                        <select class="form-control" id="sistema_agrupamiento" name="sistema_agrupamiento">
+                                            <option value="1">AISLADO</option>
+                                            <option value="2">PAREADO</option>
+                                            <option value="3">CONTINUO</option>
+                                            <option value="4">AISLADO SOBRE CONTINUIDAD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="tipo_cubierta">Tipo de Cubierta</label>
+                                        <select class="form-control" id="tipo_cubierta" name="tipo_cubierta">
+                                            <option value="1">HORIZONTAL</option>
+                                            <option value="2">INCLINADA</option>
+                                            <option value="3">CURVA</option>
+                                            <option value="4">OTRO</option>
+                                        </select>
+                                        <input type="text" id="tipo_cubierta_otro" name="tipo_cubierta_otro" class="form-control" placeholder="Otro">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="tipo_cubierta">Volumetría</label>
+                                        <select class="form-control" id="tipo_cubierta" name="tipo_cubierta">
+                                            <option value="1">SIMPLE</option>
+                                            <option value="2">COMPLEJA</option>
+                                            <option value="3">MIXTA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+    
+                    <!-- 9.- Estado de conservación -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-7">
+                          <button disabled class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">
+                                9.- Estado de conservación
+                          </button>
+                        </h2>
+                        <div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="heading-7" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                    </div>
+    
+                    <!-- 10.- Grado de alteración -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-8">
+                          <button disabled class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-8" aria-expanded="false" aria-controls="collapse-8">
+                                10.- Grado de alteración
+                          </button>
+                        </h2>
+                        <div id="collapse-8" class="accordion-collapse collapse" aria-labelledby="heading-8" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                    </div>
+    
+                    <!-- 11.- Aptitud de rehabilitación -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-9">
+                          <button disabled class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-9" aria-expanded="false" aria-controls="collapse-9">
+                                11.- Aptitud de rehabilitación
+                          </button>
+                        </h2>
+                        <div id="collapse-9" class="accordion-collapse collapse" aria-labelledby="heading-9" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                    </div>
+    
+                    <!-- 12.- Relación del inmueble con el entorno -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-10">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-10" aria-expanded="false" aria-controls="collapse-10">
+                                12.- Relación del inmueble con el entorno
+                          </button>
+                        </h2>
+                        <div id="collapse-10" class="accordion-collapse collapse" aria-labelledby="heading-10" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="imagen_urbana_relevante">Imagen Urbana Relevante</label>
+                                        <select class="form-control" id="imagen_urbana_relevante" name="imagen_urbana_relevante">
+                                            <option value="1">Por ubicación</option>
+                                            <option value="2">Por singularidad</option>
+                                        </select>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="parte_conjunto">Forma parte de un conjunto</label>
+                                        <select class="form-control" id="parte_conjunto" name="parte_conjunto">
+                                            <option value="1">Si</option>
+                                            <option value="2">No</option>
+                                        </select>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="espacio-publico">Espacio Público</label>
+                                        <select class="form-control" id="espacio-publico" name="espacio-publico">
+                                            <option value="1">Colinda</option>
+                                            <option value="2">Enfrenta</option>
+                                        </select>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="presencia_elementos_patrimonial">Presencia De Otros Elementos De Valor Patrimonial</label>
+                                        <input type="text" class="form-control" id="presencia_elementos_patrimonial" name="presencia_elementos_patrimonial" placeholder="Ej. Placas en fachada, escultura, monumento público, y otros">                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="observaciones_urbano_geograficas">Observaciones Contexto Urbano / Condiciones Geográficas</label>
+                                        <textarea class="form-control" id="observaciones_urbano_geograficas" name="observaciones_urbano_geograficas" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+    
+                    <!-- 13.- Categoría de acuerdo a su uso -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-11">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-11" aria-expanded="false" aria-controls="collapse-11">
+                                13.- Categoría de acuerdo a su uso
+                          </button>
+                        </h2>
+                        <div id="collapse-11" class="accordion-collapse collapse" aria-labelledby="heading-11" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="categoria_acuerdo_uso">Categoría de acuerdo de uso</label>
+                                        <select class="form-control" id="categoria_acuerdo_uso" name="categoria_acuerdo_uso">
+                                            <option value="1">CONJUNTOS DE INMUEBLES/ VIVIENDAS UNIFAMILIARES</option>
+                                            <option value="2">COPROPIEDADES / VIVIENDAS PLURIFAMILIARES</option>
+                                            <option value="3">EDIFICACIONES DE EDUCACIÓN</option>
+                                            <option value="4">IGLESIAS / CONJUNTOS RELIGIOSOS</option>
+                                            <option value="5">INDUSTRIAS Y BODEGAS</option>
+                                            <option value="6">POBLACIONES DE VIVIENDAS/ VIVIENDAS UNIFAMILIARES</option>
+                                            <option value="7">VILLAS, PALACIOS Y CASONAS / VIVIENDAS UNIFAMILIARES</option>
+                                            <option value="8">VIVIENDAS COLECTIVAS / VIVIENDAS PLURIFAMILIARES</option>
+                                            <option value="9">TEATROS / EDIFICIOS EMBLEMÁTICOS</option>
+                                            <option value="10">ANTIGUOS HOTELES /RESTAURANTES /CAFES</option>
+                                            <option value="11">EDIFICACIONES DE SALUD</option>
+                                            <option value="12">EDIFICIOS DE SERVICIOS PUBLICOS</option>
+                                            <option value="13">GRANDES EMPRESAS Y OFICINAS</option>
+                                            <option value="14">INSTALACIONES  DEPORTIVAS</option>
+                                            <option value="15">INSTALACIONES MILITARES Y DE DEFENSA</option>
+                                            <option value="16">LUGARES DE VALOR SOCIAL / SIMBOLICO O HISTORICO</option>
+                                            <option value="17">MERCADOS</option>
+                                        </select>                                        
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+    
+                    <!-- 14.- Conclusiones o remendaciones para su intervencion -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-12">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-12" aria-expanded="false" aria-controls="collapse-12">
+                                14.- Conclusiones o remendaciones para su intervención
+                          </button>
+                        </h2>
+                        <div id="collapse-12" class="accordion-collapse collapse" aria-labelledby="heading-12" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="conclusiones">Conclusiones o remendaciones para su intervencion</label>
+                                        <textarea class="form-control" id="conclusiones" name="conclusiones" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+    
+                    <!-- 15.- Fuentes referenciales y bibliográficas -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-13">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-13" aria-expanded="false" aria-controls="collapse-13">
+                                15.- Fuentes referenciales y bibliográficas
+                          </button>
+                        </h2>
+                        <div id="collapse-13" class="accordion-collapse collapse" aria-labelledby="heading-13" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="fuentes_referenciales">Indicar si cuenta con antecedentes e información en Archivo Histórico y/o DOM</label>
+                                        <textarea class="form-control" id="fuentes_referenciales" name="fuentes_referenciales" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row m-3">
+            <div class="col-12">
+                <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main_content %}
+
+{% block custom_js %}
+
+{% endblock custom_js %}
