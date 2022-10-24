@@ -44,10 +44,14 @@
 
 {% block custom_js %}
 <script>
+    document.getElementById("tabla_fichas").style.display = "none";
     $(document).ready( function () {
         $('#tabla_fichas').DataTable({
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.12.1/i18n/es-CL.json'
+            }, 
+            initComplete: function () {
+                $("#tabla_fichas").show();
             }
         });
     } );

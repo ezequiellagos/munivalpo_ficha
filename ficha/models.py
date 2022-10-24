@@ -148,7 +148,6 @@ REGIMEN_PROPIEDAD = [
 AFECTACION_ACTUAL = [
     ('DECLARACION DE UTILIDAD PUBLICA', 'Declaración de Utilidad Pública'),
     ('ANTEJARDIN', 'Antejardín'),
-    ('OTRO', 'Otro'),
 ]
 
 class InformacionTecnica(models.Model):
@@ -179,10 +178,271 @@ class InformacionTecnica(models.Model):
         verbose_name_plural = "informaciones_tecnicas"
 
 # Sección 8
-TIPOLOGIA = [
-
+SISTEMA_AGRUPAMIENTO = [
+    ('AISLADO', 'Aislado'),
+    ('PAREADO', 'Pareado'),
+    ('CONTINUO', 'Continuo'),
+    ('AISLADO SOBRE CONTINUIDAD', 'Aislado sobre continuidad'),
 ]
-# class CaracteristicasMorfologicas(models.Model):
+
+VOLUMETRIA = [
+    ('SIMPLE', 'Simple'),
+    ('COMPLEJA', 'Compleja'),
+    ('MIXTA', 'Mixta'),
+]
+
+MATERIALIDAD_ESTRUCTURA = [
+    ('ACERO', 'Acero'),
+    ('HORMIGON ARMADO', 'Hormigón Armado'),
+    ('ALBAÑILERIA', 'Albañilería'),
+    ('PIEDRA', 'Piedra'),
+    ('MADERA', 'Madera'),
+    ('ADOBE', 'Adobe'),
+]
+
+MATERIALIDAD_CUBIERTA = [
+    ('FIBROCEMENTO', 'Fibrocemento'),
+    ('TEJAS', 'Tejas'),
+    ('TEJUELA (ZINC)', 'Tejuela (Zinc)'),
+    ('ACERO GALVANIZADO', 'Acero Galvanizado'),
+    ('OTROS', 'Otros'),
+]
+
+class Tipologias(models.Model):
+    manzana = models.BooleanField(default=False)
+    esquina = models.BooleanField(default=False)
+    entre_medianeros = models.BooleanField(default=False)
+    cabezal = models.BooleanField(default=False)
+    crucero = models.BooleanField(default=False)
+    doble_frente = models.BooleanField(default=False)
+    antejardines = models.BooleanField(default=False)
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "tipologia"
+        verbose_name_plural = "tipologias"
+class TipoCubierta(models.Model):
+    horizontal = models.BooleanField(default=False)
+    inclinada = models.BooleanField(default=False)
+    curva = models.BooleanField(default=False)
+    otro = models.BooleanField(default=False)
+    otro_texto = models.CharField(max_length=255, blank=True, default='')
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "tipo_cubierta"
+        verbose_name_plural = "tipos_cubiertas"
+
+class ElementosValorSignificativo(models.Model):
+    cornisamientos = models.BooleanField(default=False)
+    zocalos = models.BooleanField(default=False)
+    molduras_relevantes_en_yeso = models.BooleanField(default=False)
+    ornamentacion_en_madera = models.BooleanField(default=False)
+    remate_en_techumbre = models.BooleanField(default=False)
+    otro = models.BooleanField(default=False)
+    otro_texto = models.CharField(max_length=255, blank=True, default='')
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "elemento_valor_significativo"
+        verbose_name_plural = "elementos_valores_significativos"
+
+class ExpresionDeFachada(models.Model):
+    lenguaje_de_vanos_comun = models.BooleanField(default=False)
+    simetria = models.BooleanField(default=False)
+    modulacion_en_serie = models.BooleanField(default=False)
+    torreon_en_esquina = models.BooleanField(default=False)
+    otro = models.BooleanField(default=False)
+    otro_texto = models.CharField(max_length=255, blank=True, default='')
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "expresion_de_fachada"
+        verbose_name_plural = "expresiones_de_fachadas"
+
+class ContinuidadDeEdificacion(models.Model):
+    fachada = models.BooleanField(default=False)
+    linea_de_remate_superior = models.BooleanField(default=False)
+    linea_de_zocalo_escalonado = models.BooleanField(default=False)
+    linea_de_zocalo_continuo = models.BooleanField(default=False)
+    realce_horizontal_prodominante = models.BooleanField(default=False)
+    zocalo_de_mamposteria = models.BooleanField(default=False)
+    otro = models.BooleanField(default=False)
+    otro_texto = models.CharField(max_length=255, blank=True, default='')
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "continuidad_de_edificacion"
+        verbose_name_plural = "continuidades_de_edificaciones"
+
+class CaracteristicasMorfologicas(models.Model):
+    tipologia = models.ForeignKey(Tipologias, on_delete=models.CASCADE)
+    sistema_agrupamiento = models.CharField(max_length=50, choices=SISTEMA_AGRUPAMIENTO, default='AISLADO', blank=True)
+    tipo_cubierta = models.ForeignKey(TipoCubierta, on_delete=models.CASCADE)
+    volumetria = models.CharField(max_length=50, choices=VOLUMETRIA, default='SIMPLE', blank=True)
+    elementos_valor_significativo = models.ForeignKey(ElementosValorSignificativo, on_delete=models.CASCADE)
+    expresion_de_fachada = models.ForeignKey(ExpresionDeFachada, on_delete=models.CASCADE)
+    continuidad_de_edificacion = models.ForeignKey(ContinuidadDeEdificacion, on_delete=models.CASCADE)
+    observaciones = models.TextField(blank=True, default='')
+    fotografia_valor_significativo = models.ImageField(upload_to='fotografias_valores_significativos', blank=True, null=True)
+    fotografia_expresion_fachada = models.ImageField(upload_to='fotografias_expresiones_fachadas', blank=True, null=True)
+    fotografia_detalles_constructivos = models.ImageField(upload_to='fotografias_detalles_constructivos', blank=True, null=True)
+
+    terreno = models.FloatField(default=0, blank=True)
+    edificada = models.FloatField(default=0, blank=True)
+    protegida = models.FloatField(default=0, blank=True)
+    altura_en_pisos = models.FloatField(default=0, blank=True)
+    altura_en_metros = models.FloatField(default=0, blank=True)
+    antejardin_frente_1 = models.FloatField(default=0, blank=True)
+    antejardin_frente_2 = models.FloatField(default=0, blank=True)
+
+    materialidad_estructura = models.CharField(max_length=50, choices=MATERIALIDAD_ESTRUCTURA, default='ACERO', blank=True)
+    materialidad_cubierta = models.CharField(max_length=50, choices=MATERIALIDAD_CUBIERTA, default='ACERO', blank=True)
+    materialidad_revestimientos = models.CharField(max_length=255, default='', blank=True)
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "caracteristica_morfologica"
+        verbose_name_plural = "caracteristicas_morfologicas"
+
+# Sección 9
+ESTADO_CONSERVACION = [
+    ('BUENO', 'Bueno'),
+    ('REGULAR', 'Regular'),
+    ('MALO', 'Malo'),
+]
+
+class EstadoDeConservacion(models.Model):
+    inmueble = models.CharField(max_length=50, choices=ESTADO_CONSERVACION, default='BUENO', blank=True)
+    entorno = models.CharField(max_length=50, choices=ESTADO_CONSERVACION, default='BUENO', blank=True)
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "estado_de_conservacion"
+        verbose_name_plural = "estados_de_conservacion"
     
+# Sección 10
+GRADO_ALTERACION = [
+    ('SIN MODIFICACION', 'Sin modificacion'),
+    ('POCO MODIFICADO', 'Poco modificado'),
+    ('MUY MODIFICADO', 'Muy modificado'),
+]
 
+class GradoDeAlteracion(models.Model):
+    fachada = models.CharField(max_length=50, choices=GRADO_ALTERACION, default='SIN MODIFICACION', blank=True)
+    cubierta = models.CharField(max_length=50, choices=GRADO_ALTERACION, default='SIN MODIFICACION', blank=True)
 
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "grado_de_alteracion"
+        verbose_name_plural = "grados_de_alteracion"
+
+# Sección 11
+class AptitudDeRehabilitacion(models.Model):
+    vivienda = models.BooleanField(default=False)
+    equipamiento = models.BooleanField(default=False)
+    comercio = models.BooleanField(default=False)
+    otro = models.BooleanField(default=False)
+    otro_texto = models.CharField(max_length=255, blank=True, default='')
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "aptitud_de_rehabilitacion"
+        verbose_name_plural = "aptitudes_de_rehabilitacion"
+
+# Sección 12
+ESPACIO_PUBLICO = [
+    ('COLINDA', 'Colinda'),
+    ('ENFRENTA', 'Enfrenta'),
+]
+
+INMUEBLES_PATRIMONIALES = [
+    ('PREDIO CONTIGUO', 'Predio contiguo'),
+    ('MANZANA', 'Manzana'),
+    ('MANZANA ENFRENTE', 'Manzana enfrente'),
+    ('RELACION VISUAL', 'Relacion visual'),
+]
+
+class RelacionDelInmuebleConElTerreno(models.Model):
+    imagen_urbana_relevante_por_ubicacion = models.BooleanField(default=False)
+    imagen_urbana_relevante_por_singularidad = models.BooleanField(default=False)
+
+    forma_parte_de_un_conjunto = models.BooleanField(default=False)
+
+    espacio_publico = models.CharField(max_length=50, choices=ESPACIO_PUBLICO, default='COLINDA', blank=True)
+
+    monumentos_historicos = models.CharField(max_length=50, choices=INMUEBLES_PATRIMONIALES, default='PREDIO CONTIGUO', blank=True)
+    inmuebles_conservacion_historica = models.CharField(max_length=50, choices=INMUEBLES_PATRIMONIALES, default='PREDIO CONTIGUO', blank=True)
+
+    observaciones = models.TextField(blank=True, default='')
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "relacion_del_inmueble_con_el_terreno"
+        verbose_name_plural = "relaciones_de_inmueble_con_el_terreno"
+
+# Sección 13
+class CategoriaDeAcuerdoASuUso(models.Model):
+    observaciones = models.TextField(blank=True, default='')
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "categoria_de_acuerdo_a_su_uso"
+        verbose_name_plural = "categorias_de_acuerdo_a_su_uso"
+
+# Sección 14
+class Conclusiones(models.Model):
+    conclusiones = models.TextField(blank=True, default='')
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "conclusiones"
+        verbose_name_plural = "conclusiones"
+
+# Sección 15
+class FuentesReferencialesYBibliograficas(models.Model):
+    fuentes_referenciales_y_bibliograficas = models.TextField(blank=True, default='')
+
+    id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "fuentes_referenciales_y_bibliograficas"
+        verbose_name_plural = "fuentes_referenciales_y_bibliograficas"
