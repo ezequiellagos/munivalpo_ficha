@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import *
+from django.http import HttpResponse
+
+from .helpers import save_pdf, save_pdf_2
+
 
 # Create your views here.
 def ficha_home(request):
@@ -469,5 +473,74 @@ def ver_ficha(request, id):
     return render(request, 'ficha/ver_ficha.html', data)
 
 def exportar_pdf(request, id):
-    data = {}
-    return render(request, 'ficha/exportar_pdf.html', data)
+
+    identificacion_inmueble = IdentificacionInmueble.objects.get(id_plano = id)
+    plano_ubicacion = PlanoUbicacion.objects.get(id_plano = id)
+    fotografia_general = FotografiaGeneral.objects.get(id_plano = id)
+    fotografia_contexto = FotografiaContexto.objects.get(id_plano = id)
+    resena_patrimonial = ResenaPatrimonial.objects.get(id_plano = id)
+    valoracion_atributos = ValoracionAtributos.objects.get(id_plano = id)
+    informacion_tecnica = InformacionTecnica.objects.get(id_plano = id)
+    caracteristicas_morfologicas = CaracteristicasMorfologicas.objects.get(id_plano = id)
+    estado_de_conservacion = EstadoDeConservacion.objects.get(id_plano = id)
+    grado_de_alteracion = GradoDeAlteracion.objects.get(id_plano = id)
+    aptitud_de_rehabilitacion = AptitudDeRehabilitacion.objects.get(id_plano = id)
+    relacion_del_inmueble_con_el_terreno = RelacionDelInmuebleConElTerreno.objects.get(id_plano = id)
+    categoria_de_acuerdo_a_su_uso = CategoriaDeAcuerdoASuUso.objects.get(id_plano = id)
+    conclusiones = Conclusiones.objects.get(id_plano = id)
+    fuentes_referenciales_y_bibliograficas = FuentesReferencialesYBibliograficas.objects.get(id_plano = id)
+
+    tipologia = Tipologias.objects.get(id_plano_id = id)
+    tipo_cubierta = TipoCubierta.objects.get(id_plano_id = id)
+    elementos_valor_significativo = ElementosValorSignificativo.objects.get(id_plano_id = id)
+    expresion_fachada = ExpresionDeFachada.objects.get(id_plano_id = id)
+    continuidad_edificacion = ContinuidadDeEdificacion.objects.get(id_plano_id = id)
+
+    # Sección 6
+    total_valor_urbano = valoracion_atributos.valor_urbano_a + valoracion_atributos.valor_urbano_b + valoracion_atributos.valor_urbano_c
+    total_valor_arquitecnico = valoracion_atributos.valor_arquitecnico_a + valoracion_atributos.valor_arquitecnico_b + valoracion_atributos.valor_arquitecnico_c
+    total_valor_historico = valoracion_atributos.valor_historico_a + valoracion_atributos.valor_historico_b
+    total_valor_economico_social = valoracion_atributos.valor_economico_social_a + valoracion_atributos.valor_economico_social_b + valoracion_atributos.valor_economico_social_c
+    total_valoracion = total_valor_urbano + total_valor_arquitecnico + total_valor_historico + total_valor_economico_social
+
+    data = {
+        'identificacion_inmueble': identificacion_inmueble,
+        'plano_ubicacion': plano_ubicacion,
+        'fotografia_general': fotografia_general,
+        'fotografia_contexto': fotografia_contexto,
+        'resena_patrimonial': resena_patrimonial,
+        'valoracion_atributos': valoracion_atributos,
+        'informacion_tecnica': informacion_tecnica,
+        'caracteristicas_morfologicas': caracteristicas_morfologicas,
+        'estado_de_conservacion': estado_de_conservacion,
+        'grado_de_alteracion': grado_de_alteracion,
+        'aptitud_de_rehabilitacion': aptitud_de_rehabilitacion,
+        'relacion_del_inmueble_con_el_terreno': relacion_del_inmueble_con_el_terreno,
+        'categoria_de_acuerdo_a_su_uso': categoria_de_acuerdo_a_su_uso,
+        'conclusiones': conclusiones,
+        'fuentes_referenciales_y_bibliograficas': fuentes_referenciales_y_bibliograficas,
+
+        'tipologia': tipologia,
+        'tipo_cubierta': tipo_cubierta,
+        'elementos_valor_significativo': elementos_valor_significativo,
+        'expresion_fachada': expresion_fachada,
+        'continuidad_edificacion': continuidad_edificacion,
+
+        'total_valor_urbano': total_valor_urbano,
+        'total_valor_arquitecnico': total_valor_arquitecnico,
+        'total_valor_historico': total_valor_historico,
+        'total_valor_economico_social': total_valor_economico_social,
+        'total_valoracion': total_valoracion,
+    }
+    file_name, status = save_pdf_2(data)
+
+    if not status:
+        print("----------------")
+        print("Error al generar PDF")
+        print("----------------")
+        return HttpResponse("Error al generar PDF")
+
+    return HttpResponse(file_name)
+
+    
+    
