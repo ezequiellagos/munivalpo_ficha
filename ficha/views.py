@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import *
 from django.http import HttpResponse
+from django.http import FileResponse
 
 from .helpers import save_pdf, save_pdf_2
 
@@ -540,7 +541,10 @@ def exportar_pdf(request, id):
         print("----------------")
         return HttpResponse("Error al generar PDF")
 
-    return HttpResponse(file_name)
+    nombre_archivo = "ficha_" + str(identificacion_inmueble.rol) + ".pdf"
+
+    # return HttpResponse(file_name)
+    return FileResponse(open(file_name, 'rb'), content_type='application/pdf', filename=nombre_archivo, as_attachment=True)
 
     
     

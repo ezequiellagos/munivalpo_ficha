@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="id_plano">ID Plano</label>
+                                        <label class="form-label" for="id_plano"><b>ID Plano</b></label>
                                         <input type="text" class="form-control" id="id_plano" name="id_plano" placeholder="{{ identificacion_inmueble.id_plano }}" disabled>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="rol">Rol</label>
+                                        <label class="form-label" for="rol"><b>Rol</b></label>
                                         <input type="text" class="form-control" id="rol" name="rol" value="{{ identificacion_inmueble.rol }}" >
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="unidad_vecinal">Unidad Vecinal</label>
+                                        <label class="form-label" for="unidad_vecinal"><b>Unidad Vecinal</b></label>
                                         <input type="text" class="form-control" id="unidad_vecinal" name="unidad_vecinal" value="{{ identificacion_inmueble.unidad_vecinal }}" >
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="region">Región</label>
+                                        <label class="form-label" for="region"><b>Región</b></label>
                                         <select class="form-control" id="region" name="region" >
                                             <option value="{{ identificacion_inmueble.region }}" selected>{{ identificacion_inmueble.region }}</option>
                                             {% for region in OPTIONS.REGION_CHOICES %}
@@ -68,7 +68,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="comuna">Comuna</label>
+                                        <label class="form-label" for="comuna"><b>Comuna</b></label>
                                         <select class="form-control" id="comuna" name="comuna" >
                                             <option value="{{ identificacion_inmueble.comuna }}" selected>{{ identificacion_inmueble.comuna }}</option>
                                             {% for comuna in OPTIONS.COMUNA_CHOICES %}
@@ -81,7 +81,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="calle">Calle</label>
+                                        <label class="form-label" for="calle"><b>Calle</b></label>
                                         <input type="text" class="form-control" id="calle" name="calle" value="{{ identificacion_inmueble.calle }}" >
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="numero">Número</label>
+                                        <label class="form-label" for="numero"><b>Número</b></label>
                                         <input type="text" class="form-control" id="numero" name="numero" value="{{ identificacion_inmueble.numero }}" >
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="plan_cerro_poblacion">Plan/Cerro/Población</label>
+                                        <label class="form-label" for="plan_cerro_poblacion"><b>Plan/Cerro/Población</b></label>
                                         <input type="text" class="form-control" id="plan_cerro_poblacion" name="plan_cerro_poblacion" value="{{ identificacion_inmueble.plan_cerro_poblacion }}" >
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="denominacion_inmueble">Denominación inmueble</label>
+                                        <label class="form-label" for="denominacion_inmueble"><b>Denominación inmueble</b></label>
                                         <input type="text" class="form-control" id="denominacion_inmueble" name="denominacion_inmueble" value="{{ identificacion_inmueble.denominacion_inmueble }}" >
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="autor">Autor</label>
+                                        <label class="form-label" for="autor"><b>Autor</b></label>
                                         <input type="text" class="form-control" id="autor" name="autor" value="{{ identificacion_inmueble.autor }}" >
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="plano_ubicacion">2.- Plano Ubicación</label>
+                                        <label class="form-label" for="plano_ubicacion"><b>2.- Plano Ubicación</b></label>
                                         <input type="file" class="form-control" id="imagen_plano" name="imagen_plano" accept="image/*">
                                         <br>
                                         {% if plano_ubicacion.imagen_plano %}
@@ -175,10 +175,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="latitud">Latitud</label>
+                                        <label class="form-label" for="latitud"><b>Latitud</b></label>
                                         <input type="text" class="form-control" id="latitud" name="latitud" value="{{ plano_ubicacion.latitud }}" >
 
-                                        <label class="form-label" for="longitud">Longitud</label>
+                                        <label class="form-label" for="longitud"><b>Longitud</b></label>
                                         <input type="text" class="form-control" id="longitud" name="longitud" value="{{ plano_ubicacion.longitud }}" >
                                     </div>
                                 </div>
@@ -186,7 +186,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="imagen_fotografia">3.- Fotografía de general</label>
+                                        <label class="form-label" for="imagen_fotografia"><b>3.- Fotografía de general</b></label>
                                         <input type="file" class="form-control" id="imagen_fotografia" name="imagen_fotografia" accept="image/*">
                                         <br>
                                         {% if fotografia_general.imagen_fotografia %}
@@ -224,7 +224,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="registro_fotografico_1">4.- Fotografía de contexto 1</label>
+                                        <label class="form-label" for="registro_fotografico_1"><b>4.- Fotografía de contexto 1</b></label>
                                         <input type="file" class="form-control" id="registro_fotografico_1" name="registro_fotografico_1" accept="image/*">
                                         <br>
                                         {% if fotografia_contexto.registro_fotografico_1 %}
@@ -262,7 +262,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="registro_fotografico_2">Fotografía de contexto 2</label>
+                                        <label class="form-label" for="registro_fotografico_2"><b>Fotografía de contexto 2</b></label>
                                         <input type="file" class="form-control" id="registro_fotografico_2" name="registro_fotografico_2" accept="image/*">
                                         <br>
                                         {% if fotografia_contexto.registro_fotografico_2 %}
@@ -300,7 +300,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="fecha_registro_fotografico">Fecha Registro Fotográfico</label>
+                                        <label class="form-label" for="fecha_registro_fotografico"><b>Fecha Registro Fotográfico</b></label>
                                         <input type="date" class="form-control" id="fecha_registro_fotografico" name="fecha_registro_fotografico" min="1900-01-01" value="{{ fotografia_contexto.fecha_registro_fotografico|date:"Y-m-d" }}" >
                                     </div>
                                 </div>
@@ -321,7 +321,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="valor_urbano">Valor Urbano</label>
+                                        <label class="form-label" for="valor_urbano"><b>Valor Urbano</b></label>
                                         <textarea class="form-control" id="valor_urbano" name="valor_urbano" rows="3">{{ resena_patrimonial.valor_urbano }}</textarea>
                                     </div>
                                 </div>
@@ -329,7 +329,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="valor_arquitecnico">Valor Arquitectónico</label>
+                                        <label class="form-label" for="valor_arquitecnico"><b>Valor Arquitectónico</b></label>
                                         <textarea class="form-control" id="valor_arquitecnico" name="valor_arquitecnico" rows="3">{{ resena_patrimonial.valor_arquitecnico }}</textarea>
                                     </div>
                                 </div>
@@ -337,7 +337,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="valor_historico">Valor Histórico</label>
+                                        <label class="form-label" for="valor_historico"><b>Valor Histórico</b></label>
                                         <textarea class="form-control" id="valor_historico" name="valor_historico" rows="3">{{ resena_patrimonial.valor_historico }}</textarea>
                                     </div>
                                 </div>
@@ -345,7 +345,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="valor_economico_social">Valor Económico / Social</label>
+                                        <label class="form-label" for="valor_economico_social"><b>Valor Económico / Social</b></label>
                                         <textarea class="form-control" id="valor_economico_social" name="valor_economico_social" rows="3">{{ resena_patrimonial.valor_economico_social }}</textarea>
                                     </div>
                                 </div>
@@ -449,7 +449,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="form-label" for="zona_conservacion">Inserto en Zona de Conservación Histórica (LGUC) o Zona Típica (Ley 17.288)</label>
+                                            <label class="form-label" for="zona_conservacion"><b>Inserto en Zona de Conservación Histórica (LGUC) o Zona Típica (Ley 17.288)</b></label>
                                             <select class="form-select" id="zona_de_conservacion" name="zona_de_conservacion">
                                                 <option value="1">Si</option>
                                                 <option value="0">No</option>
@@ -460,7 +460,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="form-label" for="valor_urbano">Identificación ZCH o ZT</label>
+                                            <label class="form-label" for="valor_urbano"><b>Identificación ZCH o ZT</b></label>
                                             <input type="text" class="form-control" id="identificacion_zch" name="identificacion_zch" value="{{ valoracion_atributos.identificacion_zch }}">
                                         </div>
                                     </div>
@@ -481,7 +481,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <span class="form-label">Destino del Inmueble</span>
+                                            <span class="form-label"><b>Destino del Inmueble</b></span>
                                             <table class="table table-bordered table-sm">
                                                 <tr>
                                                     <th>Piso</th>
@@ -522,7 +522,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="form-label" for="tipo_propiedad">Año de Construcción</label>
+                                            <label class="form-label" for="tipo_propiedad"><b>Año de Construcción</b></label>
                                             <select class="form-control" id="anio_construccion" name="anio_construccion" >
                                                 <option value="{{ informacion_tecnica.anio_construccion }}" selected>{{ informacion_tecnica.anio_construccion }}</option>
                                                 {% for anio_construccion in OPTIONS.PERIODOS_CONSTRUCCION %}
@@ -535,7 +535,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="form-label" for="tipo_propiedad">Tipo de Propiedad</label>
+                                            <label class="form-label" for="tipo_propiedad"><b>Tipo de Propiedad</b></label>
                                             <select class="form-control" id="tipo_propiedad" name="tipo_propiedad" >
                                                 <option value="{{ informacion_tecnica.tipo_propiedad }}" selected>{{ informacion_tecnica.tipo_propiedad }}</option>
                                                 {% for tipo_propiedad in OPTIONS.TIPO_PROPIEDAD %}
@@ -548,7 +548,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="form-label" for="tipo_usuario">Tipo de Usuario</label>
+                                            <label class="form-label" for="tipo_usuario"><b>Tipo de Usuario</b></label>
                                             <select class="form-control" id="tipo_usuario" name="tipo_usuario" >
                                                 <option value="{{ informacion_tecnica.tipo_usuario }}" selected>{{ informacion_tecnica.tipo_usuario }}</option>
                                                 {% for tipo_usuario in OPTIONS.TIPO_USUARIO %}
@@ -561,7 +561,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="form-label" for="regimen_propiedad">Regimen de Propiedad</label>
+                                            <label class="form-label" for="regimen_propiedad"><b>Regimen de Propiedad</b></label>
                                             <select class="form-control" id="regimen_propiedad" name="regimen_propiedad" >
                                                 <option value="{{ informacion_tecnica.regimen_propiedad }}" selected>{{ informacion_tecnica.regimen_propiedad }}</option>
                                                 {% for tipo_regimen in OPTIONS.REGIMEN_PROPIEDAD %}
@@ -576,7 +576,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="form-label" for="afectacion_actual">Afectación Actual</label>
+                                            <label class="form-label" for="afectacion_actual"><b>Afectación Actual</b></label>
                                             <select class="form-control" id="afectacion_actual" name="afectacion_actual" >
                                                 <option value="{{ informacion_tecnica.afectacion_actual }}" selected>{{ informacion_tecnica.afectacion_actual }}</option>
                                                 {% for afectacion_actual in OPTIONS.AFECTACION_ACTUAL %}
@@ -589,7 +589,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="form-label" for="informacion_tecnica_observaciones">Observaciones</label>
+                                            <label class="form-label" for="informacion_tecnica_observaciones"><b>Observaciones</b></label>
                                             <textarea class="form-control" id="informacion_tecnica_observaciones" name="informacion_tecnica_observaciones" rows="3">{{ informacion_tecnica.observaciones }}</textarea>
                                         </div>
                                     </div>
@@ -607,10 +607,10 @@
                         </h2>
                         <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#accordionExample">
                           <div class="accordion-body">
-                            <div class="row">
+                            <div class="row bg-light">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="tipologia">Tipología (Emplazamiento en manzana)</label>
+                                        <label class="form-label" for="tipologia"><b>Tipología (Emplazamiento en manzana)</b></label>
                                         <table class="table table-bordered table-hover table-sm">
                                             <tr>
                                                 <td>Manzana:</td>
@@ -675,7 +675,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="sistema_agrupamiento">Sistema de Agrupamiento</label>
+                                        <label class="form-label" for="sistema_agrupamiento"><b>Sistema de Agrupamiento</b></label>
                                         <select class="form-control" id="sistema_agrupamiento" name="sistema_agrupamiento" >
                                             <option value="{{ caracteristicas_morfologicas.sistema_agrupamiento }}" selected>{{ caracteristicas_morfologicas.sistema_agrupamiento }}</option>
                                             {% for sistema_agrupamiento in OPTIONS.SISTEMA_AGRUPAMIENTO %}
@@ -685,10 +685,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row bg-light">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="tipo_cubierta">Tipo de Cubierta</label>
+                                        <label class="form-label" for="tipo_cubierta"><b>Tipo de Cubierta</b></label>
                                         <table class="table table-bordered table-hover table-sm">
                                             <tr>
                                                 <td>Horizontal:</td>
@@ -735,7 +735,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="volumetria">Volumetría</label>
+                                        <label class="form-label" for="volumetria"><b>Volumetría</b></label>
                                         <select class="form-control" id="volumetria" name="volumetria" >
                                             <option value="{{ caracteristicas_morfologicas.volumetria }}" selected>{{ caracteristicas_morfologicas.volumetria }}</option>
                                             {% for volumetria in OPTIONS.VOLUMETRIA %}
@@ -745,10 +745,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row bg-light">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="elementos_valor_significativo">Elementos de Valor Significativo</label>
+                                        <label class="form-label" for="elementos_valor_significativo"><b>Elementos de Valor Significativo</b></label>
                                         <table class="table table-bordered table-hover table-sm">
                                             <tr>
                                                 <td>Cornisamientos:</td>
@@ -811,7 +811,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="expresion_fachada">Expresión de Fachada</label>
+                                        <label class="form-label" for="expresion_fachada"><b>Expresión de Fachada</b></label>
                                         <table class="table table-bordered table-hover table-sm">
                                             <tr>
                                                 <td>Lenguaje de vanos comun:</td>
@@ -863,10 +863,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row bg-light">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="continuidad_edificacion">Continuidad de Edificación</label>
+                                        <label class="form-label" for="continuidad_edificacion"><b>Continuidad de Edificación</b></label>
                                         <table class="table table-bordered table-hover table-sm">
                                             <tr>
                                                 <td>Fachada:</td>
@@ -937,15 +937,15 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="caracteristicas_morfologicas_observaciones">Observaciones</label>
+                                        <label class="form-label" for="caracteristicas_morfologicas_observaciones"><b>Observaciones</b></label>
                                         <textarea class="form-control" id="caracteristicas_morfologicas_observaciones" name="caracteristicas_morfologicas_observaciones" rows="3">{{ caracteristicas_morfologicas.observaciones }}</textarea>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row bg-light">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="fotografia_valor_significativo">Registro Fotográfico Valor Significativo</label>
+                                        <label class="form-label" for="fotografia_valor_significativo"><b>Registro Fotográfico Valor Significativo</b></label>
                                         <input type="file" class="form-control" id="fotografia_valor_significativo" name="fotografia_valor_significativo" accept="image/*">
                                         <br>
                                         {% if caracteristicas_morfologicas.fotografia_valor_significativo %}
@@ -983,7 +983,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="fotografia_expresion_fachada">Registro Fotográfico Expresión Fachada</label>
+                                        <label class="form-label" for="fotografia_expresion_fachada"><b>Registro Fotográfico Expresión Fachada</b></label>
                                         <input type="file" class="form-control" id="fotografia_expresion_fachada" name="fotografia_expresion_fachada" accept="image/*">
                                         <br>
                                         {% if caracteristicas_morfologicas.fotografia_expresion_fachada %}
@@ -1018,10 +1018,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row bg-light">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="fotografia_detalles_constructivos">Registro Fotográfico Detalles constructivos</label>
+                                        <label class="form-label" for="fotografia_detalles_constructivos"><b>Registro Fotográfico Detalles constructivos</b></label>
                                         <input type="file" class="form-control" id="fotografia_detalles_constructivos" name="fotografia_detalles_constructivos" accept="image/*">
                                         <br>
                                         {% if caracteristicas_morfologicas.fotografia_detalles_constructivos %}
@@ -1059,7 +1059,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="continuidad_edificacion">Superficies y Dimensiones</label>
+                                        <label class="form-label" for="continuidad_edificacion"><b>Superficies y Dimensiones</b></label>
                                         <table class="table table-bordered table-hover table-sm">
                                             <tr>
                                                 <td>Terreno</td>
@@ -1113,10 +1113,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row bg-light">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="materialidad">Materialidad</label>
+                                        <label class="form-label" for="materialidad"><b>Materialidad</b></label>
                                         <table class="table table-bordered table-sm">
                                             <tr>
                                                 <td>Estructura</td>
@@ -1174,7 +1174,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="inmueble">Inmueble</label>
+                                        <label class="form-label" for="inmueble"><b>Inmueble</b></label>
                                         <select class="form-control" id="inmueble" name="inmueble" >
                                             <option value="{{ estado_de_conservacion.inmueble }}" selected>{{ estado_de_conservacion.inmueble }}</option>
                                             {% for inmueble in OPTIONS.ESTADO_CONSERVACION %}
@@ -1187,7 +1187,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="entorno">Entorno</label>
+                                        <label class="form-label" for="entorno"><b>Entorno</b></label>
                                         <select class="form-control" id="entorno" name="entorno" >
                                             <option value="{{ estado_de_conservacion.entorno }}" selected>{{ estado_de_conservacion.entorno }}</option>
                                             {% for entorno in OPTIONS.ESTADO_CONSERVACION %}
@@ -1213,7 +1213,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="grado_de_alteracion_fachada">Fachada</label>
+                                        <label class="form-label" for="grado_de_alteracion_fachada"><b>Fachada</b></label>
                                         <select class="form-control" id="grado_de_alteracion_fachada" name="grado_de_alteracion_fachada" >
                                             <option value="{{ grado_de_alteracion.fachada }}" selected>{{ grado_de_alteracion.fachada }}</option>
                                             {% for fachada in OPTIONS.GRADO_ALTERACION %}
@@ -1226,7 +1226,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="grado_de_alteracion_cubierta">Cubierta</label>
+                                        <label class="form-label" for="grado_de_alteracion_cubierta"><b>Cubierta</b></label>
                                         <select class="form-control" id="grado_de_alteracion_cubierta" name="grado_de_alteracion_cubierta" >
                                             <option value="{{ grado_de_alteracion.cubierta }}" selected>{{ grado_de_alteracion.cubierta }}</option>
                                             {% for cubierta in OPTIONS.GRADO_ALTERACION %}
@@ -1312,7 +1312,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="grado_de_alteracion_cubierta">Imagen Urbana Relevante</label>
+                                        <label class="form-label" for="grado_de_alteracion_cubierta"><b>Imagen Urbana Relevante</b></label>
                                         <table class="table table-bordered table-hover table-sm">
                                             <tr>
                                                 <td>Por ubicación:</td>
@@ -1337,7 +1337,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="grado_de_alteracion_cubierta">Forma Parte de un Conjunto</label>
+                                        <label class="form-label" for="grado_de_alteracion_cubierta"><b>Forma Parte de un Conjunto</b></label>
                                         <table class="table table-bordered table-hover table-sm">
                                             <tr>
                                                 <td>Forma Parte de un Conjunto:</td>
@@ -1354,7 +1354,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="espacio_publico">Espacio Público</label>
+                                        <label class="form-label" for="espacio_publico"><b>Espacio Público</b></label>
                                         <select class="form-control" id="espacio_publico" name="espacio_publico" >
                                             <option value="{{ relacion_del_inmueble_con_el_terreno.espacio_publico }}" selected>{{ relacion_del_inmueble_con_el_terreno.espacio_publico }}</option>
                                             {% for espacio_publico in OPTIONS.ESPACIO_PUBLICO %}
@@ -1367,7 +1367,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="monumentos_historicos">Monumentos Históricos</label>
+                                        <label class="form-label" for="monumentos_historicos"><b>Monumentos Históricos</b></label>
                                         <select class="form-control" id="monumentos_historicos" name="monumentos_historicos" >
                                             <option value="{{ relacion_del_inmueble_con_el_terreno.monumentos_historicos }}" selected>{{ relacion_del_inmueble_con_el_terreno.monumentos_historicos }}</option>
                                             {% for monumentos_historicos in OPTIONS.INMUEBLES_PATRIMONIALES %}
@@ -1380,7 +1380,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="inmuebles_conservacion_historica">Inmuebles de Conservación Histórica</label>
+                                        <label class="form-label" for="inmuebles_conservacion_historica"><b>Inmuebles de Conservación Histórica</b></label>
                                         <select class="form-control" id="inmuebles_conservacion_historica" name="inmuebles_conservacion_historica" >
                                             <option value="{{ relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica }}" selected>{{ relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica }}</option>
                                             {% for inmuebles_conservacion_historica in OPTIONS.INMUEBLES_PATRIMONIALES %}
@@ -1393,7 +1393,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="espacio_publico_observaciones">Observaciones Contexto Urbano / Condiciones Geográficas</label>
+                                        <label class="form-label" for="espacio_publico_observaciones"><b>Observaciones Contexto Urbano / Condiciones Geográficas</b></label>
                                         <textarea class="form-control" id="espacio_publico_observaciones" name="espacio_publico_observaciones" rows="3">{{ relacion_del_inmueble_con_el_terreno.observaciones }}</textarea>
                                     </div>
                                 </div>
@@ -1414,7 +1414,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="categoria_acuerdo_uso">Categoría de acuerdo de uso</label>
+                                        <label class="form-label" for="categoria_acuerdo_uso"><b>Categoría de acuerdo de uso</b></label>
                                         <select class="form-control" id="categoria_acuerdo_uso" name="categoria_acuerdo_uso">
                                             <option value="1">CONJUNTOS DE INMUEBLES/ VIVIENDAS UNIFAMILIARES</option>
                                             <option value="2">COPROPIEDADES / VIVIENDAS PLURIFAMILIARES</option>
@@ -1453,7 +1453,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="conclusiones">Conclusiones o remendaciones para su intervencion</label>
+                                        <label class="form-label" for="conclusiones"><b>Conclusiones o remendaciones para su intervención</b></label>
                                         <textarea class="form-control" id="conclusiones" name="conclusiones" rows="3">{{ conclusiones.conclusiones }}</textarea>
                                     </div>
                                 </div>
@@ -1474,7 +1474,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="fuentes_referenciales_y_bibliograficas">Indicar si cuenta con antecedentes e información en Archivo Histórico y/o DOM</label>
+                                        <label class="form-label" for="fuentes_referenciales_y_bibliograficas"><b>Indicar si cuenta con antecedentes e información en Archivo Histórico y/o DOM</b></label>
                                         <textarea class="form-control" id="fuentes_referenciales_y_bibliograficas" name="fuentes_referenciales_y_bibliograficas" rows="3">{{ fuentes_referenciales_y_bibliograficas.fuentes_referenciales_y_bibliograficas }}</textarea>
                                     </div>
                                 </div>

@@ -22,9 +22,9 @@
                         <td>{{ ficha.rol }}</td>
                         <td>{{ ficha.calle }}, {{ficha.numero}}, {{ ficha.comuna }}</td>
                         <td>
-                            <a href="{% url 'ver_ficha' ficha.id_plano %}" class="btn btn-primary">Ver</a>
+                            {% comment %} <a href="{% url 'ver_ficha' ficha.id_plano %}" class="btn btn-primary">Ver</a> {% endcomment %}
                             <a href="{% url 'editar_ficha' ficha.id_plano %}" class="btn btn-warning">Editar</a>
-                            <a href="{% url 'exportar_pdf' ficha.id_plano %}" class="btn btn-danger">PDF</a>
+                            <a href="{% url 'exportar_pdf' ficha.id_plano %}" target="_blank" class="btn btn-danger">PDF</a>
                         </td>
                     </tr>
                     {% empty %}
