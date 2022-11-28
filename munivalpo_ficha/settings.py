@@ -77,14 +77,25 @@ WSGI_APPLICATION = 'munivalpo_ficha.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # if os.environ.get('HEROKU') and os.environ.get('HEROKU') == 'True':
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'muni_valpo',
+#         'USER': 'doadmin',
+#         'PASSWORD': 'AVNS_3YxyuJVykG6bW-NitbY',
+#         'HOST': 'db-postgresql-nyc1-32397-do-user-4815935-0.b.db.ondigitalocean.com',
+#         'PORT': '25060',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'muni_valpo',
-        'USER': 'doadmin',
-        'PASSWORD': 'AVNS_3YxyuJVykG6bW-NitbY',
-        'HOST': 'db-postgresql-nyc1-32397-do-user-4815935-0.b.db.ondigitalocean.com',
-        'PORT': '25060',
+        'NAME': 'muni_valpo_ficha',
+        'USER': 'muni_valpo_ficha',
+        'PASSWORD': 'munivalpoficha2022-NitbY',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
