@@ -175,11 +175,23 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="latitud"><b>Latitud</b></label>
-                                        <input type="text" class="form-control" id="latitud" name="latitud" value="{{ plano_ubicacion.latitud }}" >
-
-                                        <label class="form-label" for="longitud"><b>Longitud</b></label>
-                                        <input type="text" class="form-control" id="longitud" name="longitud" value="{{ plano_ubicacion.longitud }}" >
+                                        <table class="table">
+                                            <tr>
+                                                <td>
+                                                    <label class="form-label" for="latitud"><b>Latitud</b></label>
+                                                    <input type="text" class="form-control" id="latitud" name="latitud" value="{{ plano_ubicacion.latitud }}" >
+                                                </td>
+                                                <td>
+                                                    <label class="form-label" for="longitud"><b>Longitud</b></label>
+                                                    <input type="text" class="form-control" id="longitud" name="longitud" value="{{ plano_ubicacion.longitud }}" >
+                                                </td>
+                                            </tr>
+                                            <tr class="text-center">
+                                                <td colspan="2">
+                                                    <a href="#" class="btn btn-primary" id="getLocation">Obtener coordenadas</a>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -1500,5 +1512,18 @@
 {% endblock main_content %}
 
 {% block custom_js %}
+<script>
+    document.getElementById("getLocation").addEventListener("click", function(event){
+        event.preventDefault();
 
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                document.getElementById('latitud').value = position.coords.latitude;
+                document.getElementById('longitud').value = position.coords.longitude;
+            });
+        } else {
+            alert('No se puede acceder a la geolocalización');
+        }
+    });
+</script>
 {% endblock custom_js %}
