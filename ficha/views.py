@@ -5,7 +5,8 @@ from django.http import HttpResponse
 from django.http import FileResponse
 
 from .helpers import save_pdf, save_pdf_2
-
+from datetime import datetime
+from datetime import date
 
 # Create your views here.
 def ficha_home(request):
@@ -533,7 +534,11 @@ def exportar_pdf(request, id):
         'total_valor_economico_social': total_valor_economico_social,
         'total_valoracion': total_valoracion,
     }
-    file_name, status = save_pdf_2(data)
+    now = datetime.now()
+    current_time = now.strftime("%d-%m-%Y_%H-%M-%S")
+    nombre_ficha = "ficha_" + str(identificacion_inmueble.id_plano) + "_" + current_time
+
+    file_name, status = save_pdf_2(data, nombre_ficha)
 
     if not status:
         print("----------------")
@@ -541,7 +546,7 @@ def exportar_pdf(request, id):
         print("----------------")
         return HttpResponse("Error al generar PDF")
 
-    nombre_archivo = "ficha_" + str(identificacion_inmueble.rol) + ".pdf"
+    nombre_archivo = nombre_ficha + ".pdf"
 
     # return HttpResponse(file_name)
     return FileResponse(open(file_name, 'rb'), content_type='application/pdf', filename=nombre_archivo, as_attachment=True)
