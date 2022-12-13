@@ -24,10 +24,11 @@ def save_pdf(params):
         return '', False
     return file_name, True
 
-def save_pdf_2(params):
+def save_pdf_2(params, filename):
     template = get_template('ficha/ficha_pdf.html')
     html = template.render(params)
-    file_name = str(uuid.uuid4())
+    # file_name = str(uuid.uuid4())
+    file_name = filename
     output_filename = str(settings.BASE_DIR) + '/media/' + str(file_name) + '.pdf'
     
     try: 
