@@ -1,4 +1,6 @@
 from django.db import models
+import os
+
 
 REGION_CHOICES = [
     ('VALPARAÍSO', 'Valparaíso'),
@@ -34,8 +36,15 @@ class IdentificacionInmueble(models.Model):
         return str(self.id_plano) + ' - ' + self.rol
 
 # Sección 2
+def content_file_name_plano(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % ('p', ext)
+    folder = "assets_ficha/" + str(instance.id_plano.id_plano)
+    return os.path.join(folder, filename)
+
 class PlanoUbicacion(models.Model):
-    imagen_plano = models.ImageField(upload_to="plano_ubicacion", blank=True, default='')
+    # imagen_plano = models.ImageField(upload_to="plano_ubicacion", blank=True, default='')
+    imagen_plano = models.ImageField(upload_to=content_file_name_plano, blank=True, default='')
     latitud = models.CharField(max_length=100, blank=True, default='')
     longitud = models.CharField(max_length=100, blank=True, default='')
     id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
@@ -47,8 +56,14 @@ class PlanoUbicacion(models.Model):
         verbose_name_plural = "planos_ubicaciones"
 
 # Sección 3
+def content_file_name_general(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % ('g', ext)
+    folder = "assets_ficha/" + str(instance.id_plano.id_plano)
+    return os.path.join(folder, filename)
+
 class FotografiaGeneral(models.Model):
-    imagen_fotografia = models.ImageField(upload_to="fotografia_general", blank=True, default='')
+    imagen_fotografia = models.ImageField(upload_to=content_file_name_general, blank=True, default='')
     id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -58,9 +73,21 @@ class FotografiaGeneral(models.Model):
         verbose_name_plural = "fotografias_generales"
 
 # Sección 4
+def content_file_name_contexto_1(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % ('c1', ext)
+    folder = "assets_ficha/" + str(instance.id_plano.id_plano)
+    return os.path.join(folder, filename)
+
+def content_file_name_contexto_2(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % ('c2', ext)
+    folder = "assets_ficha/" + str(instance.id_plano.id_plano)
+    return os.path.join(folder, filename)
+
 class FotografiaContexto(models.Model):
-    registro_fotografico_1 = models.ImageField(upload_to="fotografia_contexto", blank=True, default='')
-    registro_fotografico_2 = models.ImageField(upload_to="fotografia_contexto", blank=True, default='')
+    registro_fotografico_1 = models.ImageField(upload_to=content_file_name_contexto_1, blank=True, default='')
+    registro_fotografico_2 = models.ImageField(upload_to=content_file_name_contexto_2, blank=True, default='')
     fecha_registro_fotografico = models.DateField()
     id_plano = models.OneToOneField(IdentificacionInmueble, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
