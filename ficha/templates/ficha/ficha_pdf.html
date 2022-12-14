@@ -97,9 +97,11 @@
                     </tr>
                 </table>
             </div>
-            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:6pt">&nbsp;</span></p>
+
+            <br>
+            
             <div align="center">
-                <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="728" style="width:545.75pt;border-collapse:collapse;border:none">
+                <table style="width:545.75pt;border-collapse:collapse;border:none">
                     <tr>
                         <td width="372" colspan="4" valign="bottom" style="width:278.7pt;border:solid #000 1pt;background:#daeef3;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoListParagraphCxSpFirst" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:15.85pt;text-indent:-14.2pt;line-height:normal"><b><span >2.<span style="font:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;</span></span></b><b><span  style="color:#000">PLANO DE UBICACIÓN</span></b></p>
@@ -113,14 +115,14 @@
                     <tr>
                         <td width="372" colspan="4" valign="bottom" style="width:278.7pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt;">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">
-                                <!-- Fotografía General -->
-                                <img src="{{ request.build_absolute_uri }}static/fichas_img/{{identificacion_inmueble.id_plano}}/p.JPG" alt="" />
+                                <!-- Fotografía Plano -->
+                                <img src="{{ MEDIA_URL }}{{ plano_ubicacion.imagen_plano.url }}" alt="" />
                             </span></b></p>
                         </td>
                         <td width="356" rowspan="3" valign="bottom" style="width:267.05pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">
-                                <!-- Fotografía Plano -->
-                                <img src="{{ request.build_absolute_uri }}static/fichas_img/{{identificacion_inmueble.id_plano}}/1.JPG" alt="" />
+                                <!-- Fotografía General -->
+                                <img src="{{ MEDIA_URL }}{{ fotografia_general.imagen_fotografia.url }}" alt="" />
                             </span></b></p>
                         </td>
                     </tr>
@@ -136,13 +138,13 @@
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:9pt;color:#000">X</span></b></p>
                         </td>
                         <td width="164" valign="bottom" style="width:122.9pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;background:#ff0;padding:0 5.4pt 0 5.4pt;height:11.1pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt">&nbsp;</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt">{{ plano_ubicacion.latitud }}</span></b></p>
                         </td>
                         <td width="25" valign="bottom" style="width:18.9pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;background:#ff0;padding:0 5.4pt 0 5.4pt;height:11.1pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:9pt;color:#000">Y</span></b></p>
                         </td>
                         <td width="161" valign="bottom" style="width:120.45pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;background:#ff0;padding:0 5.4pt 0 5.4pt;height:11.1pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt">&nbsp;</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt">{{ plano_ubicacion.longitud }}</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -153,12 +155,12 @@
                     <tr>
                         <td width="372" colspan="4" valign="bottom" style="width:278.7pt;border-top:none;border-left:solid #000 1pt;border-bottom:none;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">
-                                <img src="{{ request.build_absolute_uri }}static/fichas_img/{{identificacion_inmueble.id_plano}}/2.JPG" alt="" />
+                                <img src="{{ MEDIA_URL }}{{ fotografia_contexto.registro_fotografico_1.url }}" alt="" />
                             </span></b></p>
                         </td>
                         <td width="356" valign="bottom" style="width:267.05pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">
-                                <img src="{{ request.build_absolute_uri }}static/fichas_img/{{identificacion_inmueble.id_plano}}/3.JPG" alt="" />
+                                <img src="{{ MEDIA_URL }}{{ fotografia_contexto.registro_fotografico_2.url }}" alt="" />
                             </span></b></p>
                         </td>
                     </tr>
@@ -167,7 +169,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">&nbsp;</span></b></p>
                         </td>
                         <td width="356" valign="bottom" style="width:267.05pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt">Fecha fotografía:</span></b><b><span  style="font-size:10pt"></span><span  style="color:#00b050">O</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt">Fecha fotografía:</span></b><b><span  style="font-size:10pt"></span><span  style="color:#00b050">{{ fotografia_contexto.fecha_registro_fotografico|date:"j-m-Y" }}</span></b></p>
                         </td>
                     </tr>
                     <tr height="0">
@@ -194,8 +196,7 @@
                     </tr>
                     <tr>
                         <td width="728" valign="bottom" style="width:545.75pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">P</span></b></p>
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">&nbsp;</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">{{ resena_patrimonial.valor_urbano }}</span></b></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">&nbsp;</span></b></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">&nbsp;</span></b></p>
                         </td>
@@ -207,8 +208,7 @@
                     </tr>
                     <tr>
                         <td width="728" valign="bottom" style="width:545.75pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">Q</span></b></p>
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">{{ resena_patrimonial.valor_arquitecnico }}</span></b></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
                         </td>
@@ -220,8 +220,7 @@
                     </tr>
                     <tr>
                         <td width="728" valign="bottom" style="width:545.75pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">R</span></b></p>
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">{{ resena_patrimonial.valor_historico }}</span></b></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
                         </td>
@@ -233,8 +232,7 @@
                     </tr>
                     <tr>
                         <td width="728" valign="bottom" style="width:545.75pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">S</span></b></p>
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#00b050">{{ resena_patrimonial.valor_economico_social }}</span></b></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
                         </td>
@@ -254,7 +252,7 @@
                     </tr>
                     <tr style="height:6.75pt">
                         <td width="131" rowspan="2" style="width:98.6pt;border:solid #000 1pt;border-top:none;background:#daeef3;padding:0 5.4pt 0 5.4pt;height:6.75pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#000">� VALOR</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#000">VALOR</span></b></p>
                         </td>
                         <td width="136" colspan="3" valign="bottom" style="width:102.15pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;background:#daeef3;padding:0 5.4pt 0 5.4pt;height:6.75pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#000">ATRIBUTOS</span></b></p>
@@ -266,13 +264,13 @@
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt">SI</span></b></p>
                         </td>
                         <td width="90" valign="bottom" style="width:67.35pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:6.75pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt">&nbsp;</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt">{% if valoracion_atributos.zona_de_conservacion %}X{% endif %}</span></b></p>
                         </td>
                         <td width="90" valign="bottom" style="width:67.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:6.75pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt">NO</span></b></p>
                         </td>
                         <td width="90" valign="bottom" style="width:67.35pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:6.75pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt">&nbsp;</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt">{% if not valoracion_atributos.zona_de_conservacion %}X{% endif %}</span></b></p>
                         </td>
                     </tr>
                     <tr style="height:6.75pt">
@@ -286,7 +284,7 @@
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#000">C</span></b></p>
                         </td>
                         <td width="394" colspan="4" valign="bottom" style="width:295.35pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;background:#daeef3;padding:0 5.4pt 0 5.4pt;height:6.75pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#000">IDENTIFICACIÓN ZCH o ZT����������</span><span  style="color:#00b050">AK</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#000">IDENTIFICACIÓN ZCH o ZT</span><span  style="color:#00b050">AK</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -294,36 +292,36 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">URBANO</span></b></p>
                         </td>
                         <td width="42" valign="bottom" style="width:31.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">T</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_urbano_a }}</span></b></p>
                         </td>
                         <td width="47" valign="bottom" style="width:35.4pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">U</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_urbano_b }}</span></b></p>
                         </td>
                         <td width="47" valign="bottom" style="width:35.45pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">V</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_urbano_c }}</span></b></p>
                         </td>
                         <td width="66" valign="bottom" style="width:49.65pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">W</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ total_valor_urbano }}</span></b></p>
                         </td>
                         <td width="394" colspan="4" valign="bottom" style="width:295.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >&nbsp;</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span >{{ valoracion_atributos.identificacion_zch }}</span></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="131" valign="bottom" style="width:98.6pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">ARQUITECT�NICO</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">ARQUITECTÓNICO</span></b></p>
                         </td>
                         <td width="42" valign="bottom" style="width:31.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">X</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_arquitecnico_a }}</span></b></p>
                         </td>
                         <td width="47" valign="bottom" style="width:35.4pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">Y</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_arquitecnico_b }}</span></b></p>
                         </td>
                         <td width="47" valign="bottom" style="width:35.45pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">Z</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_arquitecnico_c }}</span></b></p>
                         </td>
                         <td width="66" valign="bottom" style="width:49.65pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">AA</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ total_valor_arquitecnico }}</span></b></p>
                         </td>
                         <td width="394" colspan="4" valign="bottom" style="width:295.35pt;border:none;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><span  style="color:#e36c0a">&nbsp;</span></p>
@@ -331,19 +329,19 @@
                     </tr>
                     <tr>
                         <td width="131" valign="bottom" style="width:98.6pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">HIST�RICO</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">HISTÓRICO</span></b></p>
                         </td>
                         <td width="42" valign="bottom" style="width:31.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">AB</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_historico_a }}</span></b></p>
                         </td>
                         <td width="47" valign="bottom" style="width:35.4pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">AC</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_historico_b }}</span></b></p>
                         </td>
                         <td width="47" valign="bottom" style="width:35.45pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><span >-</span></p>
                         </td>
                         <td width="66" valign="bottom" style="width:49.65pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">AD</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ total_valor_historico }}</span></b></p>
                         </td>
                         <td width="124" valign="bottom" style="width:93.35pt;border:none;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">&nbsp;</span></b></p>
@@ -360,19 +358,19 @@
                     </tr>
                     <tr>
                         <td width="131" valign="bottom" style="width:98.6pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">ECON�MICO/SOCIAL</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">ECONÓMICO/SOCIAL</span></b></p>
                         </td>
                         <td width="42" valign="bottom" style="width:31.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">AE</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_economico_social_a }}</span></b></p>
                         </td>
                         <td width="47" valign="bottom" style="width:35.4pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">AF</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_economico_social_b }}</span></b></p>
                         </td>
                         <td width="47" valign="bottom" style="width:35.45pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">AG</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ valoracion_atributos.valor_economico_social_c }}</span></b></p>
                         </td>
                         <td width="66" valign="bottom" style="width:49.65pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">AH</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ total_valor_economico_social }}</span></b></p>
                         </td>
                         <td width="394" colspan="4" valign="bottom" style="width:295.35pt;border:none;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="color:#e36c0a">&nbsp;</span></b></p>
@@ -383,7 +381,7 @@
                             <p class="MsoNormal" align="right" style="margin-bottom:0;text-align:right;line-height:normal"><b><span  style="font-size:10pt;color:#000">PUNTAJE TOTAL</span></b></p>
                         </td>
                         <td width="66" valign="bottom" style="width:49.65pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">AI</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="color:#00b050">{{ total_valoracion }}</span></b></p>
                         </td>
                         <td width="394" colspan="4" valign="bottom" style="width:295.35pt;border:none;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="color:#e36c0a">&nbsp;</span></p>
@@ -401,7 +399,7 @@
                     </tr>
                     <tr>
                         <td width="728" colspan="18" valign="bottom" style="width:545.75pt;border:solid #000 1pt;border-top:none;background:#b6dde8;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:15.85pt;text-align:justify;text-indent:-14.2pt;line-height:normal"><b><span >7.<span style="font:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;</span></span></b><b><span  style="color:#000">INFORMACI�N T�CNICA</span></b></p>
+                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:15.85pt;text-align:justify;text-indent:-14.2pt;line-height:normal"><b><span >7.<span style="font:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;</span></span></b><b><span  style="color:#000">INFORMACIÓN TÉCNICA</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -409,7 +407,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><b><span  style="font-size:10pt">7.1 DESTINO DEL INMUEBLE</span></b></p>
                         </td>
                         <td width="394" colspan="11" valign="bottom" style="width:295.6pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">7.2 A�O DE CONSTRUCCI�N (Per�odo y a�o)</span></b><b><span  style="font-size:10pt;color:#00b050">������������ AR</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">7.2 AÑO DE CONSTRUCCIÓN (Período y año)</span></b><b><span  style="font-size:10pt;color:#00b050"> AR</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -500,13 +498,13 @@
                     </tr>
                     <tr>
                         <td width="148" colspan="2" valign="bottom" style="width:110.85pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:8pt">7.3 TIPO DE PROPIEDAD ���</span></b><b><span  style="font-size:10pt;color:#00b050">AS</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:8pt">7.3 TIPO DE PROPIEDAD </span></b><b><span  style="font-size:10pt;color:#00b050">AS</span></b></p>
                         </td>
                         <td width="186" colspan="5" valign="bottom" style="width:139.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">7.4 TIPO DE USUARIO ������<span style="color:#00b050">AT</span></span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">7.4 TIPO DE USUARIO <span style="color:#00b050">AT</span></span></b></p>
                         </td>
                         <td width="394" colspan="11" valign="bottom" style="width:295.6pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">7.5 REGIMEN DE PROPIEDAD�����<span style="color:#00b050">AU</span></span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">7.5 REGIMEN DE PROPIEDAD<span style="color:#00b050">AU</span></span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -569,13 +567,13 @@
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">3</span></b></p>
                         </td>
                         <td width="128" colspan="4" valign="bottom" style="width:95.95pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">PERSONA JUR�DICA</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">PERSONA JURÍDICA</span></p>
                         </td>
                         <td width="52" valign="bottom" style="width:38.85pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">2</span></b></p>
                         </td>
                         <td width="161" colspan="5" valign="bottom" style="width:120.6pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">SUCESI�N</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">SUCESIÓN</span></p>
                         </td>
                         <td width="54" valign="bottom" style="width:40.2pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">2</span></b></p>
@@ -583,7 +581,7 @@
                     </tr>
                     <tr style="height:12.2pt">
                         <td width="364" colspan="8" valign="bottom" style="width:272.75pt;border-top:none;border-left:solid #000 1pt;border-bottom:solid #000 1pt;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt;height:12.2pt">
-                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">7.6 AFECTACI�N ACTUAL����</span></b><b><span  style="font-size:10pt;color:#00b050">AV</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">7.6 AFECTACIÓN ACTUAL</span></b><b><span  style="font-size:10pt;color:#00b050">AV</span></b></p>
                         </td>
                         <td width="150" colspan="4" valign="bottom" style="width:112.2pt;border:none;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt;height:12.2pt">
                             <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">7.7 OBSERVACIONES</span></b></p>
@@ -597,13 +595,13 @@
                     </tr>
                     <tr>
                         <td width="220" colspan="3" valign="bottom" style="width:165.2pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">DECLARACI�N DE UTILIDAD P�BLICA</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">DECLARACIÓN DE UTILIDAD PÚBLICA</span></p>
                         </td>
                         <td width="28" colspan="2" valign="bottom" style="width:21.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">1</span></b></p>
                         </td>
                         <td width="115" colspan="3" valign="bottom" style="width:86.25pt;border:none;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">OTROS:���</span><b><span  style="font-size:10pt;color:#00b050">3</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">OTROS:</span><b><span  style="font-size:10pt;color:#00b050">3</span></b></p>
                         </td>
                         <td width="150" colspan="4" valign="bottom" style="width:112.2pt;border:none;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">AW</span></b></p>
@@ -617,7 +615,7 @@
                     </tr>
                     <tr style="height:3.5pt">
                         <td width="220" colspan="3" valign="bottom" style="width:165.2pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt;height:3.5pt">
-                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">ANTEJARD�N</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">ANTEJARDÍN</span></p>
                         </td>
                         <td width="28" colspan="2" valign="bottom" style="width:21.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt;height:3.5pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">2</span></b></p>
@@ -662,21 +660,21 @@
                 <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="727" style="border-collapse:collapse;border:none">
                     <tr>
                         <td width="727" colspan="16" valign="bottom" style="width:545.25pt;border:solid #000 1pt;background:#b6dde8;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:11.05pt;text-indent:-11.05pt;line-height:normal"><b><span >8.<span style="font:7pt 'Times New Roman'">&nbsp;</span></span></b><b><span  style="color:#000">CARACTER�STICAS MORFOL�GICAS Y ARQUITECT�NICAS DEL INMUEBLE</span></b></p>
+                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:11.05pt;text-indent:-11.05pt;line-height:normal"><b><span >8.<span style="font:7pt 'Times New Roman'">&nbsp;</span></span></b><b><span  style="color:#000">CARACTERÍSTICAS MORFOLÓGICAS Y ARQUITECTÓNICAS DEL INMUEBLE</span></b></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="248" colspan="5" valign="bottom" style="width:186.35pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">8.1 TIPOLOG�A (Emplazamiento en manzana)�����<span style="color:#00b050">AZ</span></span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">8.1 TIPOLOGÍA (Emplazamiento en manzana)<span style="color:#00b050">AZ</span></span></b></p>
                         </td>
                         <td width="180" colspan="4" rowspan="2" style="width:134.7pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">8.2 SISTEMA DE AGRUPAMIENTO����<span style="color:#00b050">BA</span></span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">8.2 SISTEMA DE AGRUPAMIENTO<span style="color:#00b050">BA</span></span></b></p>
                         </td>
                         <td width="161" colspan="4" rowspan="2" style="width:120.5pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">8.3 TIPO DE CUBIERTA�<span style="color:#00b050">BB</span></span></b></p>
                         </td>
                         <td width="138" colspan="3" rowspan="2" style="width:103.7pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">8.4 VOLUMETR�A�</span></b><b><span  style="font-size:10pt;color:#00b050">BC</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">8.4 VOLUMETRÍA</span></b><b><span  style="font-size:10pt;color:#00b050">BC</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -797,7 +795,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt;color:#e36c0a">8.5 ELEMENTOS DE VALOR SIGNIFICATIVO</span></b><b><span  style="font-size:9pt;color:#00b050">BD</span></b></p>
                         </td>
                         <td width="479" colspan="11" valign="bottom" style="width:358.9pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">INMUEBLE Y SU RELACI�N CONTEXTUAL (Conjuntos de inmuebles)</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">INMUEBLE Y SU RELACIÓN CONTEXTUAL (Conjuntos de inmuebles)</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -808,21 +806,21 @@
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">1</span></b></p>
                         </td>
                         <td width="180" colspan="4" valign="bottom" style="width:134.7pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt;color:#e36c0a">8.6 EXPRESI�N DE FACHADA��</span></b><b><span  style="font-size:9pt;color:#00b050">BE</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt;color:#e36c0a">8.6 EXPRESIÓN DE FACHADA</span></b><b><span  style="font-size:9pt;color:#00b050">BE</span></b></p>
                         </td>
                         <td width="299" colspan="7" valign="bottom" style="width:224.2pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt;color:#e36c0a">8.7 CONTINUIDAD����</span></b><b><span  style="font-size:9pt;color:#00b050">BF</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt;color:#e36c0a">8.7 CONTINUIDAD</span></b><b><span  style="font-size:9pt;color:#00b050">BF</span></b></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="211" colspan="3" style="width:158.05pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">Z�CALOS</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">ZÓCALOS</span></p>
                         </td>
                         <td width="38" colspan="2" style="width:28.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">2</span></b></p>
                         </td>
                         <td width="151" colspan="3" valign="bottom" style="width:4cm;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">LENGUAJE DE VANOS COM�N</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">LENGUAJE DE VANOS COMÚN</span></p>
                         </td>
                         <td width="28" style="width:21.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">1</span></b></p>
@@ -842,7 +840,7 @@
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">3</span></b></p>
                         </td>
                         <td width="151" colspan="3" valign="bottom" style="width:4cm;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">SIMETR�A</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">SIMETRÍA</span></p>
                         </td>
                         <td width="28" valign="bottom" style="width:21.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">2</span></b></p>
@@ -856,19 +854,19 @@
                     </tr>
                     <tr>
                         <td width="211" colspan="3" valign="bottom" style="width:158.05pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">ORNAMENTACI�N EN MADERA</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">ORNAMENTACIÓN EN MADERA</span></p>
                         </td>
                         <td width="38" colspan="2" valign="bottom" style="width:28.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">4</span></b></p>
                         </td>
                         <td width="151" colspan="3" valign="bottom" style="width:4cm;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">MODULACI�N EN SERIE</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">MODULACIÓN EN SERIE</span></p>
                         </td>
                         <td width="28" valign="bottom" style="width:21.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">3</span></b></p>
                         </td>
                         <td width="246" colspan="6" valign="bottom" style="width:184.25pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">L�NEA DE Z�CALO ESCALONADO</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">LÍNEA DE ZÓCALO ESCALONADO</span></p>
                         </td>
                         <td width="53" valign="bottom" style="width:39.95pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">3</span></b></p>
@@ -882,13 +880,13 @@
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">5</span></b></p>
                         </td>
                         <td width="151" colspan="3" valign="bottom" style="width:4cm;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">TORRE�N EN ESQUINA</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">TORREÓN EN ESQUINA</span></p>
                         </td>
                         <td width="28" valign="bottom" style="width:21.3pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">4</span></b></p>
                         </td>
                         <td width="246" colspan="6" valign="bottom" style="width:184.25pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">L�NEA DE Z�CALO CONTINUO</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">LÍNEA DE ZÓCALO CONTINUO</span></p>
                         </td>
                         <td width="53" valign="bottom" style="width:39.95pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">4</span></b></p>
@@ -916,10 +914,10 @@
                     </tr>
                     <tr>
                         <td width="428" colspan="9" valign="bottom" style="width:321.05pt;border-top:none;border-left:solid windowtext 1pt;border-bottom:none;border-right:solid windowtext 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">OBSERVACIONES:</span><span  style="font-size:9pt;color:red">En este campo indicar si tiene publicidad, por ej.���</span><b><span  style="font-size:10pt;color:#00b050">BG</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">OBSERVACIONES:</span><span  style="font-size:9pt;color:red">En este campo indicar si tiene publicidad, por ej.</span><b><span  style="font-size:10pt;color:#00b050">BG</span></b></p>
                         </td>
                         <td width="246" colspan="6" valign="bottom" style="width:184.25pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">Z�CALO DE MAMPOSTER�A</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:9pt;color:#e36c0a">ZÓCALO DE MAMPOSTERÍA</span></p>
                         </td>
                         <td width="53" valign="bottom" style="width:39.95pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">6</span></b></p>
@@ -939,7 +937,7 @@
                     </tr>
                     <tr style="height:3pt">
                         <td width="727" colspan="16" valign="bottom" style="width:545.25pt;border-top:none;border-left:solid windowtext 1pt;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:3pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">8.8 FOTOGRAF�AS DE DETALLES (Elementos de valor significativo � expresi�n de fachada � detalles constructivos)</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">8.8 FOTOGRAFÍAS DE DETALLES (Elementos de valor significativo - expresión de fachada - detalles constructivos)</span></b></p>
                         </td>
                     </tr>
                     <tr style="height:3pt">
@@ -976,13 +974,13 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">TERRENO</span></p>
                         </td>
                         <td width="76" valign="bottom" style="width:56.65pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:3pt">
-                            <p class="MsoNormal" align="right" style="margin-bottom:0;text-align:right;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">BI</span></b><span  style="font-size:10pt">����Mt2</span></p>
+                            <p class="MsoNormal" align="right" style="margin-bottom:0;text-align:right;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">BI</span></b><span  style="font-size:10pt">Mt2</span></p>
                         </td>
                         <td width="123" colspan="4" valign="bottom" style="width:92.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:3pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">ALTURA</span></b></p>
                         </td>
                         <td width="142" colspan="3" valign="bottom" style="width:106.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:3pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">ANTEJARD�N</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">ANTEJARDÍN</span></b></p>
                         </td>
                         <td width="104" colspan="2" valign="bottom" style="width:77.95pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:3pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">ESTRUCTURA</span></p>
@@ -999,7 +997,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">EDIFICADA</span></p>
                         </td>
                         <td width="76" valign="bottom" style="width:56.65pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:3pt">
-                            <p class="MsoNormal" align="right" style="margin-bottom:0;text-align:right;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">BJ ��</span></b><span  style="font-size:10pt">��Mt2</span></p>
+                            <p class="MsoNormal" align="right" style="margin-bottom:0;text-align:right;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">BJ </span></b><span  style="font-size:10pt">Mt2</span></p>
                         </td>
                         <td width="85" colspan="3" valign="bottom" style="width:63.8pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:3pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">EN PISOS</span></p>
@@ -1028,7 +1026,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">PROTEGIDA</span></b></p>
                         </td>
                         <td width="76" valign="bottom" style="width:56.65pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:3pt">
-                            <p class="MsoNormal" align="right" style="margin-bottom:0;text-align:right;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">BK</span></b><b><span  style="font-size:10pt;color:#e36c0a">���Mt2</span></b></p>
+                            <p class="MsoNormal" align="right" style="margin-bottom:0;text-align:right;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">BK</span></b><b><span  style="font-size:10pt;color:#e36c0a">Mt2</span></b></p>
                         </td>
                         <td width="85" colspan="3" valign="bottom" style="width:63.8pt;border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt;height:3pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">EN METROS</span></p>
@@ -1068,13 +1066,13 @@
                 <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="726" style="width:544.35pt;border-collapse:collapse;border:none">
                     <tr>
                         <td width="241" colspan="3" valign="bottom" style="width:180.8pt;border:solid #000 1pt;background:#b6dde8;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraphCxSpFirst" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:10.3pt;text-indent:-10.3pt;line-height:normal"><b><span >9.<span style="font:7pt 'Times New Roman'">&nbsp;</span></span></b><b><span  style="color:#000">ESTADO DE CONSERVACI�N</span></b></p>
+                            <p class="MsoListParagraphCxSpFirst" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:10.3pt;text-indent:-10.3pt;line-height:normal"><b><span >9.<span style="font:7pt 'Times New Roman'">&nbsp;</span></span></b><b><span  style="color:#000">ESTADO DE CONSERVACIÓN</span></b></p>
                         </td>
                         <td width="290" colspan="4" valign="bottom" style="width:217.7pt;border:solid #000 1pt;border-left:none;background:#b6dde8;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraphCxSpMiddle" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:13.15pt;text-indent:-14.15pt;line-height:normal"><b><span >10.</span></b><b><span  style="color:#000">GRADO DE ALTERACI�N</span></b></p>
+                            <p class="MsoListParagraphCxSpMiddle" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:13.15pt;text-indent:-14.15pt;line-height:normal"><b><span >10.</span></b><b><span  style="color:#000">GRADO DE ALTERACIÓN</span></b></p>
                         </td>
                         <td width="194" colspan="2" valign="bottom" style="width:145.85pt;border:solid #000 1pt;border-left:none;background:#b6dde8;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraphCxSpLast" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:15.95pt;text-indent:-15.95pt;line-height:normal"><b><span >11.<span style="font:7pt 'Times New Roman'"></span></span></b><b><span  style="color:#000">APTITUD DE REHABILITACI�N���</span><span  style="color:#00b050">BW</span></b></p>
+                            <p class="MsoListParagraphCxSpLast" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:15.95pt;text-indent:-15.95pt;line-height:normal"><b><span >11.<span style="font:7pt 'Times New Roman'"></span></span></b><b><span  style="color:#000">APTITUD DE REHABILITACIÓN</span><span  style="color:#00b050">BW</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -1088,10 +1086,10 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:8pt">ENTORNO<span style="color:#00b050">BT</span></span></b></p>
                         </td>
                         <td width="149" colspan="2" valign="bottom" style="width:111.4pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt">FACHADA���<span style="color:#00b050">BU</span></span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt">FACHADA<span style="color:#00b050">BU</span></span></b></p>
                         </td>
                         <td width="142" colspan="2" valign="bottom" style="width:106.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">CUBIERTA���</span></b><b><span  style="font-size:10pt;color:#00b050">BV</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">CUBIERTA</span></b><b><span  style="font-size:10pt;color:#00b050">BV</span></b></p>
                         </td>
                         <td width="154" valign="bottom" style="width:115.85pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">VIVIENDA</span></p>
@@ -1111,13 +1109,13 @@
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">1</span></b></p>
                         </td>
                         <td width="130" valign="bottom" style="width:97.2pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">SIN MODIFICACI�N</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">SIN MODIFICACIÓN</span></p>
                         </td>
                         <td width="19" valign="bottom" style="width:14.2pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">1</span></b></p>
                         </td>
                         <td width="123" valign="bottom" style="width:92.15pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">SIN MODIFICACI�N</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">SIN MODIFICACIÓN</span></p>
                         </td>
                         <td width="19" valign="bottom" style="width:14.15pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">1</span></p>
@@ -1212,26 +1210,26 @@
                     </tr>
                     <tr>
                         <td width="722" colspan="10" valign="bottom" style="width:541.25pt;border:solid #000 1pt;border-top:none;background:#b6dde8;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:15.9pt;text-indent:-15.9pt;line-height:normal"><b><span >12.<span style="font:7pt 'Times New Roman'"></span></span></b><b><span  style="color:#000">RELACI�N DEL INMUEBLE CON EL ENTORNO</span></b></p>
+                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:15.9pt;text-indent:-15.9pt;line-height:normal"><b><span >12.<span style="font:7pt 'Times New Roman'"></span></span></b><b><span  style="color:#000">RELACIÓN DEL INMUEBLE CON EL ENTORNO</span></b></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="180" colspan="2" valign="bottom" style="width:134.95pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">12.1 IMAGEN URBANA RELEVANTE��<span style="color:#00b050">�BX</span></span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">12.1 IMAGEN URBANA RELEVANTE<span style="color:#00b050">BX</span></span></b></p>
                         </td>
                         <td width="161" colspan="3" valign="bottom" style="width:120.4pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">12.2 FORMA PARTE DE UN CONJUNTO���<span style="color:#00b050">BY</span></span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">12.2 FORMA PARTE DE UN CONJUNTO<span style="color:#00b050">BY</span></span></b></p>
                         </td>
                         <td width="151" colspan="3" valign="bottom" style="width:113.35pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">12.3 ESPACIO P�BLICO���</span></b><b><span  style="font-size:10pt;color:#00b050">BZ</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">12.3 ESPACIO PÚBLICO</span></b><b><span  style="font-size:10pt;color:#00b050">BZ</span></b></p>
                         </td>
                         <td width="230" colspan="2" valign="bottom" style="width:172.55pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt">12.4 PRESENCIA DE OTROS ELEMENTOS DE VALOR PATRIMONIAL���<span style="color:#00b050">CA</span></span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:9pt">12.4 PRESENCIA DE OTROS ELEMENTOS DE VALOR PATRIMONIAL<span style="color:#00b050">CA</span></span></b></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="152" valign="bottom" style="width:113.9pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">POR UBICACI�N</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">POR UBICACIÓN</span></p>
                         </td>
                         <td width="28" style="width:21.05pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">1</span></b></p>
@@ -1249,7 +1247,7 @@
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">1</span></b></p>
                         </td>
                         <td width="230" colspan="2" rowspan="2" valign="bottom" style="width:172.55pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:red">(Ej. Placas en fachada, escultura, monumento p�blico, entre otros)</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:red">(Ej. Placas en fachada, escultura, monumento público, entre otros)</span></p>
                         </td>
                     </tr>
                     <tr>
@@ -1274,15 +1272,15 @@
                     </tr>
                     <tr>
                         <td width="722" colspan="10" valign="bottom" style="width:541.25pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">12.5 INMUEBLES PATRIMONIALES CON PROTECCI�N OFICIAL EN EL ENTORNO</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">12.5 INMUEBLES PATRIMONIALES CON PROTECCIÓN OFICIAL EN EL ENTORNO</span></b></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="361" colspan="6" valign="bottom" style="width:270.6pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">MONUMENTOS HIST�RICOS (Ley 17.288)���</span></b><b><span  style="font-size:10pt;color:#00b050">CB</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">MONUMENTOS HISTÓRICOS (Ley 17.288)</span></b><b><span  style="font-size:10pt;color:#00b050">CB</span></b></p>
                         </td>
                         <td width="361" colspan="4" valign="bottom" style="width:270.65pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">INMUEBLES DE CONSERVACI�N HIST�RICA (LGUC)��</span></b><b><span  style="font-size:10pt;color:#00b050">CC</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">INMUEBLES DE CONSERVACIÓN HISTÓRICA (LGUC)</span></b><b><span  style="font-size:10pt;color:#00b050">CC</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -1329,13 +1327,13 @@
                     </tr>
                     <tr>
                         <td width="180" colspan="3" valign="bottom" style="width:135.3pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">RELACI�N VISUAL</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">RELACIÓN VISUAL</span></b></p>
                         </td>
                         <td width="180" colspan="3" valign="bottom" style="width:135.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">4</span></b></p>
                         </td>
                         <td width="180" colspan="3" valign="bottom" style="width:135.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">RELACI�N VISUAL</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">RELACIÓN VISUAL</span></b></p>
                         </td>
                         <td width="180" valign="bottom" style="width:135.35pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">4</span></b></p>
@@ -1343,7 +1341,7 @@
                     </tr>
                     <tr>
                         <td width="722" colspan="10" valign="bottom" style="width:541.25pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:1.7pt;text-indent:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">12.6<span style="font:7pt 'Times New Roman'">&nbsp;&nbsp;</span></span></b><b><span  style="font-size:10pt;color:#e36c0a">OBSERVACIONES CONTEXTO URBANO / CONDICIONES GEOGR�FICAS���</span></b><b><span  style="font-size:10pt;color:#00b050">CD</span></b></p>
+                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:1.7pt;text-indent:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">12.6<span style="font:7pt 'Times New Roman'">&nbsp;&nbsp;</span></span></b><b><span  style="font-size:10pt;color:#e36c0a">OBSERVACIONES CONTEXTO URBANO / CONDICIONES GEOGRÁFICAS</span></b><b><span  style="font-size:10pt;color:#00b050">CD</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -1358,18 +1356,18 @@
                     </tr>
                     <tr>
                         <td width="722" colspan="10" valign="bottom" style="width:541.25pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:8.8pt;text-indent:-8.8pt;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">13.<span style="font:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b><b><span  style="font-size:10pt;color:#e36c0a">CATEGOR�A DE ACUERDO A SU USO���</span></b><b><span  style="font-size:10pt;color:#00b050">CE</span></b></p>
+                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:8.8pt;text-indent:-8.8pt;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">13.<span style="font:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b><b><span  style="font-size:10pt;color:#e36c0a">CATEGORÍA DE ACUERDO A SU USO</span></b><b><span  style="font-size:10pt;color:#00b050">CE</span></b></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="722" colspan="10" valign="bottom" style="width:541.25pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt">Ej. Categor�a de Viviendas Colectivas, o Edificios de Copropiedades, o Poblaciones de Viviendas, o Poblaciones de Viviendas, o Conjuntos de Inmuebles, etc (se completa s�lo con una categor�a).</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt">Ej. Categoría de Viviendas Colectivas, o Edificios de Copropiedades, o Poblaciones de Viviendas, o Poblaciones de Viviendas, o Conjuntos de Inmuebles, etc (se completa sólo con una categoría).</span></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">&nbsp;</span></b></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="722" colspan="10" valign="bottom" style="width:541.25pt;border:solid #000 1pt;border-top:none;background:#b6dde8;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:22.95pt;text-indent:-21.25pt;line-height:normal"><b><span  style="color:#e36c0a">14.<span style="font:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b><b><span  style="color:#e36c0a;background:#b6dde8">C</span><span  style="color:#e36c0a">ONCLUSIONES O RECOMENDACIONES PARA SU INTERVENCI�N���</span><span  style="color:#00b050">CF</span></b></p>
+                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:22.95pt;text-indent:-21.25pt;line-height:normal"><b><span  style="color:#e36c0a">14.<span style="font:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b><b><span  style="color:#e36c0a;background:#b6dde8">C</span><span  style="color:#e36c0a">CONCLUSIONES O RECOMENDACIONES PARA SU INTERVENCIÓN</span><span  style="color:#00b050">CF</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -1384,12 +1382,12 @@
                     </tr>
                     <tr>
                         <td width="722" colspan="10" valign="bottom" style="width:541.25pt;border:solid #000 1pt;border-top:none;background:#b6dde8;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:15.9pt;text-indent:-15.9pt;line-height:normal"><b><span >15.<span style="font:7pt 'Times New Roman'"></span></span></b><b><span  style="color:#000">FUENTES REFERENCIALES Y BIBLIOGR�FICAS���</span><span  style="color:#00b050">CG</span></b></p>
+                            <p class="MsoListParagraph" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:15.9pt;text-indent:-15.9pt;line-height:normal"><b><span >15.<span style="font:7pt 'Times New Roman'"></span></span></b><b><span  style="color:#000">FUENTES REFERENCIALES Y BIBLIOGRÁFICAS</span><span  style="color:#00b050">CG</span></b></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="722" colspan="10" valign="bottom" style="width:541.25pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:red">Indicar si cuenta con antecedentes e informaci�n en Archivo Hist�rico y/o DOM.</span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:red">Indicar si cuenta con antecedentes e informaciÓn en Archivo Histórico y/o DOM.</span></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:red">&nbsp;</span></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:red">&nbsp;</span></p>
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:red">&nbsp;</span></p>
@@ -1401,7 +1399,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:red">&nbsp;</span></p>
                         </td>
                         <td width="361" colspan="4" valign="bottom" style="width:270.65pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">Fecha de elaboraci�n ficha:<b><span style="color:#00b050">CH</span></b></span></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">Fecha de elaboraciÓn ficha:<b><span style="color:#00b050">CH</span></b></span></p>
                         </td>
                     </tr>
                     <tr>
