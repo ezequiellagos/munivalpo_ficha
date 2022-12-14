@@ -3,10 +3,12 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 from django.http import HttpResponse
 from django.http import FileResponse
+from django.conf import settings
 
 from .helpers import save_pdf, save_pdf_2
 from datetime import datetime
 from datetime import date
+
 
 # Create your views here.
 def ficha_home(request):
@@ -451,6 +453,8 @@ def editar_ficha(request, id = 0):
         'total_valor_historico': total_valor_historico,
         'total_valor_economico_social': total_valor_economico_social,
         'total_valoracion': total_valoracion,
+
+        'MEDIA_URL': settings.MEDIA_URL,
     }
     return render(request, 'ficha/editar_ficha.html', data)
 
@@ -533,6 +537,8 @@ def exportar_pdf(request, id):
         'total_valor_historico': total_valor_historico,
         'total_valor_economico_social': total_valor_economico_social,
         'total_valoracion': total_valoracion,
+
+        'MEDIA_URL': request.build_absolute_uri('/')[:-1],
     }
     now = datetime.now()
     current_time = now.strftime("%d-%m-%Y_%H-%M-%S")
