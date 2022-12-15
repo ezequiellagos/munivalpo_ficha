@@ -12,13 +12,18 @@ class PlanoUbicacionAdmin(admin.ModelAdmin):
     list_filter = ('created', 'updated')
     search_fields = ('id_plano', 'latitud', 'longitud', 'created', 'updated')
 
+class InformacionTecnicaAdmin(admin.ModelAdmin):
+    list_display = ('id_plano', 'created', 'updated')
+    list_filter = ('created', 'updated')
+    search_fields = ('id_plano__id_plano', 'id_plano__rol', 'created', 'updated')
+
 admin.site.register(IdentificacionInmueble, IdentificacionInmuebleAdmin)
 admin.site.register(PlanoUbicacion, PlanoUbicacionAdmin)
 admin.site.register(FotografiaGeneral)
 admin.site.register(FotografiaContexto)
 admin.site.register(ResenaPatrimonial)
 admin.site.register(ValoracionAtributos)
-admin.site.register(InformacionTecnica)
+admin.site.register(InformacionTecnica, InformacionTecnicaAdmin)
 admin.site.register(Tipologias)
 admin.site.register(TipoCubierta)
 admin.site.register(ElementosValorSignificativo)
