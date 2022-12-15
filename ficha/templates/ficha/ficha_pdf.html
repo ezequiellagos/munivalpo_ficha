@@ -407,7 +407,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><b><span  style="font-size:10pt">7.1 DESTINO DEL INMUEBLE</span></b></p>
                         </td>
                         <td width="394" colspan="11" valign="bottom" style="width:295.6pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">7.2 AÑO DE CONSTRUCCIÓN (Período y año)</span></b><b><span  style="font-size:10pt;color:#00b050"> AR</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><b><span  style="font-size:10pt;color:#e36c0a">7.2 AÑO DE CONSTRUCCIÓN (Período y año)</span></b><b><span  style="font-size:10pt;color:#00b050"> </span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -447,10 +447,10 @@
                             <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt">Subsuelo</span></p>
                         </td>
                         <td width="106" colspan="3" valign="bottom" style="width:79.2pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">AL</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{{ informacion_tecnica.piso_original_subterraneo }}</span></b></p>
                         </td>
                         <td width="112" colspan="3" valign="bottom" style="width:83.7pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">AM</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{{ informacion_tecnica.piso_actual_subterraneo }}</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -458,31 +458,31 @@
                             <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt">Primer piso</span></p>
                         </td>
                         <td width="106" colspan="3" valign="bottom" style="width:79.2pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">AN</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{{ informacion_tecnica.piso_original_primer_piso }}</span></b></p>
                         </td>
                         <td width="112" colspan="3" valign="bottom" style="width:83.7pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">AO</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{{ informacion_tecnica.piso_actual_primer_piso }}</span></b></p>
                         </td>
                         <td width="74" colspan="2" rowspan="2" style="width:55.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">1</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.anio_construccion|lower == "anterior a 1900" %}X{% endif %}</span></b></p>
                         </td>
                         <td width="53" rowspan="2" style="width:40pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">2</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.anio_construccion == "1901-1920" %}X{% endif %}</span></b></p>
                         </td>
                         <td width="53" colspan="3" rowspan="2" style="width:40pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">3</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.anio_construccion == "1921-1940" %}X{% endif %}</span></b></p>
                         </td>
                         <td width="53" rowspan="2" style="width:40pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">4</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.anio_construccion == "1941-1960" %}X{% endif %}</span></b></p>
                         </td>
                         <td width="53" colspan="2" rowspan="2" style="width:40pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">5</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.anio_construccion == "1961-1970" %}X{% endif %}</span></b></p>
                         </td>
                         <td width="53" rowspan="2" style="width:40.1pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">6</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.anio_construccion == "1971-1990" %}X{% endif %}</span></b></p>
                         </td>
                         <td width="54" rowspan="2" style="width:40.2pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">7</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.anio_construccion == "Post 1990" %}X{% endif %}</span></b></p>
                         </td>
                     </tr>
                     <tr>
@@ -490,15 +490,15 @@
                             <p class="MsoNormal" style="margin-bottom:0;text-align:justify;line-height:normal"><span  style="font-size:10pt">Pisos superiores</span></p>
                         </td>
                         <td width="106" colspan="3" valign="bottom" style="width:79.2pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">AP</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{{ informacion_tecnica.piso_original_pisos_superiores }}</span></b></p>
                         </td>
                         <td width="112" colspan="3" valign="bottom" style="width:83.7pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">AQ</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{{ informacion_tecnica.piso_actual_pisos_superiores }}</span></b></p>
                         </td>
                     </tr>
                     <tr>
                         <td width="148" colspan="2" valign="bottom" style="width:110.85pt;border:solid #000 1pt;border-top:none;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:8pt">7.3 TIPO DE PROPIEDAD </span></b><b><span  style="font-size:10pt;color:#00b050">AS</span></b></p>
+                            <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:8pt">7.3 TIPO DE PROPIEDAD </span></b><b><span  style="font-size:10pt;color:#00b050"></span></b></p>
                         </td>
                         <td width="186" colspan="5" valign="bottom" style="width:139.3pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><b><span  style="font-size:10pt">7.4 TIPO DE USUARIO <span style="color:#00b050">AT</span></span></b></p>
@@ -512,7 +512,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">PARTICULAR</span></p>
                         </td>
                         <td width="31" valign="bottom" style="width:23.6pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">1</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.tipo_propiedad|lower == "particular" %}X{% endif %}</span></b></p>
                         </td>
                         <td width="148" colspan="4" valign="bottom" style="width:110.95pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">PROPIETARIO</span></p>
@@ -532,7 +532,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">FISCAL</span></p>
                         </td>
                         <td width="31" style="width:23.6pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">2</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.tipo_propiedad|lower == "fiscal" %}X{% endif %}</span></b></p>
                         </td>
                         <td width="148" colspan="4" style="width:110.95pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt">ARRENDATARIO</span></p>
@@ -558,7 +558,7 @@
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">MUNICIPAL</span></p>
                         </td>
                         <td width="31" valign="bottom" style="width:23.6pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
-                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">3</span></b></p>
+                            <p class="MsoNormal" align="center" style="margin-bottom:0;text-align:center;line-height:normal"><b><span  style="font-size:10pt;color:#00b050">{% if informacion_tecnica.tipo_propiedad|lower == "municipal" %}X{% endif %}</span></b></p>
                         </td>
                         <td width="148" colspan="4" valign="bottom" style="width:110.95pt;border-top:none;border-left:none;border-bottom:solid #000 1pt;border-right:solid #000 1pt;padding:0 5.4pt 0 5.4pt">
                             <p class="MsoNormal" style="margin-bottom:0;line-height:normal"><span  style="font-size:10pt;color:#e36c0a">USUFRUCTUARIO</span></p>
