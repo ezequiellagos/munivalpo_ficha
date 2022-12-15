@@ -34,10 +34,10 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
               </li>
-              <li class="nav-item">
+              {% comment %} <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
+              </li> {% endcomment %}
+              {% comment %} <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
                 </a>
@@ -47,7 +47,7 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
-              </li>
+              </li> {% endcomment %}
               <li class="nav-item">
                 <a href="{% url 'core_logout' %}" target="_self" class="nav-link">Cerrar sesión</a>
               </li>
