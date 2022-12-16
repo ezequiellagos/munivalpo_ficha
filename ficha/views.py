@@ -544,7 +544,7 @@ def exportar_pdf(request, id):
 
         'MEDIA_URL': request.build_absolute_uri('/')[:-1],
 
-        'current_time': current_time,
+        'current_time': now,
         'current_user': current_user,
     }
     
