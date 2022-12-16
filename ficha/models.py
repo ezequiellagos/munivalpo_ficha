@@ -1,6 +1,6 @@
 from django.db import models
 import os
-
+from auditlog.registry import auditlog
 
 REGION_CHOICES = [
     ('VALPARAÍSO', 'Valparaíso'),
@@ -491,3 +491,24 @@ class FuentesReferencialesYBibliograficas(models.Model):
     class Meta:
         verbose_name = "fuentes_referenciales_y_bibliograficas"
         verbose_name_plural = "fuentes_referenciales_y_bibliograficas"
+
+auditlog.register(IdentificacionInmueble)
+auditlog.register(PlanoUbicacion)
+auditlog.register(FotografiaGeneral)
+auditlog.register(FotografiaContexto)
+auditlog.register(ResenaPatrimonial)
+auditlog.register(ValoracionAtributos)
+auditlog.register(InformacionTecnica)
+auditlog.register(Tipologias)
+auditlog.register(TipoCubierta)
+auditlog.register(ElementosValorSignificativo)
+auditlog.register(ExpresionDeFachada)
+auditlog.register(ContinuidadDeEdificacion)
+auditlog.register(CaracteristicasMorfologicas)
+auditlog.register(EstadoDeConservacion)
+auditlog.register(GradoDeAlteracion)
+auditlog.register(AptitudDeRehabilitacion)
+auditlog.register(RelacionDelInmuebleConElTerreno)
+auditlog.register(CategoriaDeAcuerdoASuUso)
+auditlog.register(Conclusiones)
+auditlog.register(FuentesReferencialesYBibliograficas)
