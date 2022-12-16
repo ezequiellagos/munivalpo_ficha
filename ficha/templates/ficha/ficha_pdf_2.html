@@ -546,40 +546,40 @@
                         <td colspan="2"><b>FACHADA</b></td>
                         <td colspan="2"><b>CUBIERTA</b></td>
                         <td colspan="2"><b>VIVIENDA</b></td>
-                        <td style="width: 30px;">{% if aptitud_de_rehabilitacion.vivienda %}X{% endif %}</td>
+                        <td>{% if aptitud_de_rehabilitacion.vivienda %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td>BUENO</td>
-                        <td style="width: 30px;">{% if estado_de_conservacion.inmueble|lower == "bueno" %}X{% endif %}</td>
-                        <td style="width: 30px;">{% if estado_de_conservacion.entorno|lower == "bueno" %}X{% endif %}</td>
-                        <td>SIN MODIFICACIÓN</td>
-                        <td style="width: 30px;">{% if grado_de_alteracion.fachada|lower == "sin modificacion" %}X{% endif %}</td>
-                        <td>SIN MODIFICACIÓN</td>
-                        <td style="width: 30px;">{% if grado_de_alteracion.cubierta|lower == "sin modificacion" %}X{% endif %}</td>
+                        <td>{% if estado_de_conservacion.inmueble|lower == "bueno" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td>{% if estado_de_conservacion.entorno|lower == "bueno" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 100px;">SIN MODIFICACIÓN</td>
+                        <td>{% if grado_de_alteracion.fachada|lower == "sin modificacion" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 100px;">SIN MODIFICACIÓN</td>
+                        <td>{% if grado_de_alteracion.cubierta|lower == "sin modificacion" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">EQUIPAMIENTO</td>
-                        <td style="width: 30px;">{% if aptitud_de_rehabilitacion.equipamiento %}X{% endif %}</td>
+                        <td>{% if aptitud_de_rehabilitacion.equipamiento %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td>REGULAR</td>
-                        <td style="width: 30px;">{% if estado_de_conservacion.inmueble|lower == "regular" %}X{% endif %}</td>
-                        <td style="width: 30px;">{% if estado_de_conservacion.entorno|lower == "regular" %}X{% endif %}</td>
+                        <td>{% if estado_de_conservacion.inmueble|lower == "regular" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td>{% if estado_de_conservacion.entorno|lower == "regular" %}X{% else %}&nbsp;{% endif %}</td>
                         <td>POCO MODIFICADO</td>
-                        <td style="width: 30px;">{% if grado_de_alteracion.fachada|lower == "poco modificado" %}X{% endif %}</td>
+                        <td>{% if grado_de_alteracion.fachada|lower == "poco modificado" %}X{% else %}&nbsp;{% endif %}</td>
                         <td>POCO MODIFICADO</td>
-                        <td style="width: 30px;">{% if grado_de_alteracion.cubierta|lower == "poco modificado" %}X{% endif %}</td>
+                        <td>{% if grado_de_alteracion.cubierta|lower == "poco modificado" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">COMERCIO</td>
-                        <td style="width: 30px;">{% if aptitud_de_rehabilitacion.comercio %}X{% endif %}</td>
+                        <td>{% if aptitud_de_rehabilitacion.comercio %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td>MALO</td>
-                        <td style="width: 30px;">{% if estado_de_conservacion.inmueble|lower == "malo" %}X{% endif %}</td>
-                        <td style="width: 30px;">{% if estado_de_conservacion.entorno|lower == "malo" %}X{% endif %}</td>
+                        <td>{% if estado_de_conservacion.inmueble|lower == "malo" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td>{% if estado_de_conservacion.entorno|lower == "malo" %}X{% else %}&nbsp;{% endif %}</td>
                         <td>MUY MODIFICADO</td>
-                        <td style="width: 30px;">{% if grado_de_alteracion.fachada|lower == "muy modificado" %}X{% endif %}</td>
+                        <td>{% if grado_de_alteracion.fachada|lower == "muy modificado" %}X{% else %}&nbsp;{% endif %}</td>
                         <td>MUY MODIFICADO</td>
-                        <td style="width: 30px;">{% if grado_de_alteracion.cubierta|lower == "muy modificado" %}X{% endif %}</td>
+                        <td>{% if grado_de_alteracion.cubierta|lower == "muy modificado" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">OTRO: {{ aptitud_de_rehabilitacion.otro_texto }}</td>
-                        <td style="width: 30px;">{% if aptitud_de_rehabilitacion.otro %}X{% endif %}</td>
+                        <td>{% if aptitud_de_rehabilitacion.otro %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                 </tbody>
             </table>
