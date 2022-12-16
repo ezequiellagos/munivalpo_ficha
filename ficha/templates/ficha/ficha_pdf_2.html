@@ -117,9 +117,9 @@
                     </tr>
                     <tr>
                         <td><b>X</b></td>
-                        <td>{{ plano_ubicacion.latitud }}</td>
+                        <td style="width:100px;">{{ plano_ubicacion.latitud }}</td>
                         <td><b>Y</b></td>
-                        <td>{{ plano_ubicacion.longitud }}</td>
+                        <td style="width:100px;">{{ plano_ubicacion.longitud }}</td>
                     </tr>
                     <tr>
                         <td colspan="8" class="bg-blue">4. FOTOGRAFÍAS DE CONTEXTO (Relación del inmueble con el entorno)</td>
@@ -249,7 +249,7 @@
 
         <!-- Sección 7 -->
         <section>
-            <table class="special">
+            <table>
                 <tbody>
                     <tr>
                         <td colspan="14" class="bg-blue text-right">ROL DE AVALÚO: {{ identificacion_inmueble.rol }}</td>
@@ -282,13 +282,13 @@
                         <td colspan="2">Primer piso</td>
                         <td colspan="2">{{ informacion_tecnica.piso_original_primer_piso }}</td>
                         <td colspan="2">{{ informacion_tecnica.piso_actual_primer_piso }}</td>
-                        <td colspan="2" rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "anterior a 1900" %}X{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1901-1920" %}X{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1921-1940" %}X{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1941-1960" %}X{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1961-1970" %}X{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1971-1990" %}X{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "post 1990" %}X{% endif %}</td>
+                        <td colspan="2" rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "anterior a 1900" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1901-1920" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1921-1940" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1941-1960" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1961-1970" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1971-1990" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "post 1990" %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Pisos superiores</td>
@@ -301,50 +301,50 @@
                         <td colspan="8"><b>7.5 REGIMEN DE PROPIEDAD</b></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><b>PARTICULAR</b></td>
-                        <td>{% if informacion_tecnica.tipo_propiedad|lower == "particular" %}X{% endif %}</td>
-                        <td colspan="2"><b>PROPIETARIO</b></td>
-                        <td>{% if informacion_tecnica.tipo_usuario|lower == "propietario" %}X{% endif %}</td>
+                        <td colspan="2">PARTICULAR</td>
+                        <td>{% if informacion_tecnica.tipo_propiedad|lower == "particular" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2">PROPIETARIO</td>
+                        <td>{% if informacion_tecnica.tipo_usuario|lower == "propietario" %}X{% else %}&nbsp;{% endif %}1</td>
                         <td colspan="4"><b>INDIVIDUAL</b></td>
                         <td colspan="4"><b>COLECTIVA</b></td>
                     </tr>
                     <tr>
                         <td colspan="2">FISCAL</td>
-                        <td>{% if informacion_tecnica.tipo_propiedad|lower == "fiscal" %}X{% endif %}</td>
+                        <td>{% if informacion_tecnica.tipo_propiedad|lower == "fiscal" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">ARRENDATARIO</td>
-                        <td>{% if informacion_tecnica.tipo_usuario|lower == "arrendatario" %}X{% endif %}</td>
+                        <td>{% if informacion_tecnica.tipo_usuario|lower == "arrendatario" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3">PERSONA NATURAL</td>
-                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "persona natural" %}X{% endif %}</td>
+                        <td>{% if informacion_tecnica.tipo_usuario|lower == "arrendatario" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3">COMUNIDAD (Copropiedad u otros)</td>
-                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "comunidad" %}X{% endif %}</td>
+                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "comunidad" %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="2">MUNICIPAL</td>
-                        <td>{% if informacion_tecnica.tipo_propiedad|lower == "municipal" %}X{% endif %}</td>
+                        <td>{% if informacion_tecnica.tipo_propiedad|lower == "municipal" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">USUFRUCTUARIO</td>
-                        <td>{% if informacion_tecnica.tipo_usuario|lower == "usufructuario" %}X{% endif %}</td>
+                        <td>{% if informacion_tecnica.tipo_usuario|lower == "usufructuario" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3">PERSONA JURÍDICA</td>
-                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "persona juridica" %}X{% endif %}</td>
+                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "persona juridica" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3">SUCESIÓN</td>
-                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "sucesion" %}X{% endif %}</td>
+                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "sucesion" %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
-                        <td colspan="7"><b>7.6 AFECTACIÓN ACTUAL</b></td>
-                        <td colspan="3" rowspan="3">
-                            <b>7.7 OBSERVACIONES AW</b>
+                        <td colspan="8"><b>7.6 AFECTACIÓN ACTUAL</b></td>
+                        <td colspan="2" rowspan="3">
+                            <b>7.7 OBSERVACIONES</b>
                             <p>{{ informacion_tecnica.observaciones }}</p>
                         </td>
                         <td colspan="2" rowspan="3"></td>
                         <td colspan="2" rowspan="3"></td>
                     </tr>
                     <tr>
-                        <td colspan="3">DECLARACIÓN DE UTILIDAD PÚBLICA</td>
-                        <td>{% if informacion_tecnica.afectacion_actual|lower == "declaracion de utilidad publica" %}X{% endif %}</td>
+                        <td colspan="4">DECLARACIÓN DE UTILIDAD PÚBLICA</td>
+                        <td>{% if informacion_tecnica.afectacion_actual|lower == "declaracion de utilidad publica" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3" rowspan="2"></td>
                     </tr>
                     <tr>
-                        <td colspan="3">ANTEJARDÍN</td>
-                        <td>{% if informacion_tecnica.afectacion_actual|lower == "antejardin" %}X{% endif %}</td>
+                        <td colspan="4">ANTEJARDÍN</td>
+                        <td>{% if informacion_tecnica.afectacion_actual|lower == "antejardin" %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                 </tbody>
             </table>
@@ -688,7 +688,7 @@
                         <td colspan="4">Fecha de elaboración ficha: {{ current_time|date:"j-m-Y" }}</td>
                     </tr>
                     <tr>
-                        <td colspan="4">Nombre autor: {{ current_user.firstname }}</td>
+                        <td colspan="4">Nombre autor: {{ current_user }}</td>
                     </tr>
                 </tbody>
             </table>
