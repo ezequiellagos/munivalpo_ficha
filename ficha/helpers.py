@@ -25,7 +25,7 @@ def save_pdf(params):
     return file_name, True
 
 def save_pdf_2(params, filename):
-    template = get_template('ficha/ficha_pdf.html')
+    template = get_template('ficha/ficha_pdf_2.html')
     html = template.render(params)
     # file_name = str(uuid.uuid4())
     file_name = filename

@@ -8,4 +8,7 @@ urlpatterns = [
     path('ver_fichas/', views.ver_fichas, name="ver_fichas"),
     path('ver_ficha/<int:id>', views.ver_ficha, name="ver_ficha"),
     path('exportar_pdf/<int:id>', views.exportar_pdf, name="exportar_pdf"),
+
+
+    path('test_pdf/<int:id>', views.test_pdf, name="test_pdf"),
 ]

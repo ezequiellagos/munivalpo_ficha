@@ -317,6 +317,24 @@ class ContinuidadDeEdificacion(models.Model):
         verbose_name = "continuidad_de_edificacion"
         verbose_name_plural = "continuidades_de_edificaciones"
 
+def content_file_name_significativo(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % ('detalle_1', ext)
+    folder = "assets_ficha/" + str(instance.id_plano.id_plano)
+    return os.path.join(folder, filename)
+
+def content_file_name_fachada(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % ('detalle_2', ext)
+    folder = "assets_ficha/" + str(instance.id_plano.id_plano)
+    return os.path.join(folder, filename)
+
+def content_file_name_constructivos(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % ('detalle_3', ext)
+    folder = "assets_ficha/" + str(instance.id_plano.id_plano)
+    return os.path.join(folder, filename)
+
 class CaracteristicasMorfologicas(models.Model):
     tipologia = models.ForeignKey(Tipologias, on_delete=models.CASCADE)
     sistema_agrupamiento = models.CharField(max_length=50, choices=SISTEMA_AGRUPAMIENTO, default='AISLADO', blank=True)
@@ -326,9 +344,9 @@ class CaracteristicasMorfologicas(models.Model):
     expresion_de_fachada = models.ForeignKey(ExpresionDeFachada, on_delete=models.CASCADE)
     continuidad_de_edificacion = models.ForeignKey(ContinuidadDeEdificacion, on_delete=models.CASCADE)
     observaciones = models.TextField(blank=True, default='')
-    fotografia_valor_significativo = models.ImageField(upload_to='fotografias_valores_significativos', blank=True, null=True)
-    fotografia_expresion_fachada = models.ImageField(upload_to='fotografias_expresiones_fachadas', blank=True, null=True)
-    fotografia_detalles_constructivos = models.ImageField(upload_to='fotografias_detalles_constructivos', blank=True, null=True)
+    fotografia_valor_significativo = models.ImageField(upload_to=content_file_name_significativo, blank=True, null=True)
+    fotografia_expresion_fachada = models.ImageField(upload_to=content_file_name_fachada, blank=True, null=True)
+    fotografia_detalles_constructivos = models.ImageField(upload_to=content_file_name_constructivos, blank=True, null=True)
 
     terreno = models.FloatField(default=0, blank=True)
     edificada = models.FloatField(default=0, blank=True)
