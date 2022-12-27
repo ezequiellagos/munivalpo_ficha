@@ -39,7 +39,7 @@
 
             @page {
                 size: letter portrait;
-                margin: 20pt;
+                margin: 30pt;
             }
             table { -pdf-keep-with-next: true; }
             section { -pdf-keep-with-next: true; }
@@ -204,49 +204,49 @@
                         <td colspan="3" class="bg-blue">ATRIBUTOS</td>
                         <td rowspan="2" class="bg-blue">PUNTOS</td>
                         <td>SI</td>
-                        <td style="width: 50px;">{% if valoracion_atributos.zona_de_conservacion %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 50px;" class="text-center">{% if valoracion_atributos.zona_de_conservacion %}X{% else %}&nbsp;{% endif %}</td>
                         <td>NO</td>
-                        <td style="width: 50px;">{% if not valoracion_atributos.zona_de_conservacion %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 50px;" class="text-center">{% if not valoracion_atributos.zona_de_conservacion %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
-                        <td class="bg-blue">A</td>
-                        <td class="bg-blue">B</td>
-                        <td class="bg-blue">C</td>
+                        <td class="bg-blue text-center">A</td>
+                        <td class="bg-blue text-center">B</td>
+                        <td class="bg-blue text-center">C</td>
                         <td colspan="4" class="bg-blue">IDENTIFICACIÓN ZCH o ZT</td>
                     </tr>
                     <tr>
                         <td>URBANO</td>
-                        <td>{{ valoracion_atributos.valor_urbano_a }}</td>
-                        <td>{{ valoracion_atributos.valor_urbano_b }}</td>
-                        <td>{{ valoracion_atributos.valor_urbano_c }}</td>
-                        <td>{{ total_valor_urbano }}</td>
-                        <td colspan="4">{{ valoracion_atributos.identificacion_zch }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_urbano_a }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_urbano_b }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_urbano_c }}</td>
+                        <td class="text-center">{{ total_valor_urbano }}</td>
+                        <td class="text-center" colspan="4">{{ valoracion_atributos.identificacion_zch }}</td>
                     </tr>
                     <tr>
                         <td>ARQUITECTÓNICO</td>
-                        <td>{{ valoracion_atributos.valor_arquitecnico_a }}</td>
-                        <td>{{ valoracion_atributos.valor_arquitecnico_b }}</td>
-                        <td>{{ valoracion_atributos.valor_arquitecnico_c }}</td>
-                        <td>{{ total_valor_arquitecnico }}</td>
-                        <td colspan="4" rowspan="4"></td>
+                        <td class="text-center">{{ valoracion_atributos.valor_arquitecnico_a }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_arquitecnico_b }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_arquitecnico_c }}</td>
+                        <td class="text-center">{{ total_valor_arquitecnico }}</td>
+                        <td class="text-center" colspan="4" rowspan="4"></td>
                     </tr>
                     <tr>
                         <td>HISTÓRICO</td>
-                        <td>{{ valoracion_atributos.valor_historico_a }}</td>
-                        <td>{{ valoracion_atributos.valor_historico_b }}</td>
-                        <td>-</td>
-                        <td>{{ total_valor_historico }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_historico_a }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_historico_b }}</td>
+                        <td class="text-center">-</td>
+                        <td class="text-center">{{ total_valor_historico }}</td>
                     </tr>
                     <tr>
                         <td>ECONÓMICO/SOCIAL</td>
-                        <td>{{ valoracion_atributos.valor_economico_social_a }}</td>
-                        <td>{{ valoracion_atributos.valor_economico_social_b }}</td>
-                        <td>{{ valoracion_atributos.valor_economico_social_c }}</td>
-                        <td>{{ total_valor_economico_social }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_economico_social_a }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_economico_social_b }}</td>
+                        <td class="text-center">{{ valoracion_atributos.valor_economico_social_c }}</td>
+                        <td class="text-center">{{ total_valor_economico_social }}</td>
                     </tr>
                     <tr>
                         <td colspan="4" class="bg-blue text-right">PUNTAJE TOTAL</td>
-                        <td>{{ total_valoracion }}</td>
+                        <td class="text-center">{{ total_valoracion }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -284,25 +284,25 @@
                     </tr>
                     <tr>
                         <td colspan="2">Subsuelo</td>
-                        <td colspan="2">{{ informacion_tecnica.piso_original_subterraneo }}</td>
-                        <td colspan="2">{{ informacion_tecnica.piso_actual_subterraneo }}</td>
+                        <td colspan="2" class="text-center">{{ informacion_tecnica.piso_original_subterraneo }}</td>
+                        <td colspan="2" class="text-center">{{ informacion_tecnica.piso_actual_subterraneo }}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Primer piso</td>
-                        <td colspan="2">{{ informacion_tecnica.piso_original_primer_piso }}</td>
-                        <td colspan="2">{{ informacion_tecnica.piso_actual_primer_piso }}</td>
-                        <td colspan="2" rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "anterior a 1900" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1901-1920" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1921-1940" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1941-1960" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1961-1970" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "1971-1990" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td rowspan="2">{% if informacion_tecnica.anio_construccion|lower == "post 1990" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2" class="text-center">{{ informacion_tecnica.piso_original_primer_piso }}</td>
+                        <td colspan="2" class="text-center">{{ informacion_tecnica.piso_actual_primer_piso }}</td>
+                        <td colspan="2" rowspan="2" class="text-center">{% if informacion_tecnica.anio_construccion|lower == "anterior a 1900" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2" class="text-center">{% if informacion_tecnica.anio_construccion|lower == "1901-1920" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2" class="text-center">{% if informacion_tecnica.anio_construccion|lower == "1921-1940" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2" class="text-center">{% if informacion_tecnica.anio_construccion|lower == "1941-1960" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2" class="text-center">{% if informacion_tecnica.anio_construccion|lower == "1961-1970" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2" class="text-center">{% if informacion_tecnica.anio_construccion|lower == "1971-1990" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td rowspan="2" class="text-center">{% if informacion_tecnica.anio_construccion|lower == "post 1990" %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="2">Pisos superiores</td>
-                        <td colspan="2">{{ informacion_tecnica.piso_original_pisos_superiores }}</td>
-                        <td colspan="2">{{ informacion_tecnica.piso_actual_pisos_superiores }}</td>
+                        <td colspan="2" class="text-center">{{ informacion_tecnica.piso_original_pisos_superiores }}</td>
+                        <td colspan="2" class="text-center">{{ informacion_tecnica.piso_actual_pisos_superiores }}</td>
                     </tr>
                     <tr>
                         <td colspan="3"><b>7.3 TIPO DE PROPIEDAD</b></td>
@@ -311,31 +311,31 @@
                     </tr>
                     <tr>
                         <td colspan="2">PARTICULAR</td>
-                        <td>{% if informacion_tecnica.tipo_propiedad|lower == "particular" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.tipo_propiedad|lower == "particular" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">PROPIETARIO</td>
-                        <td>{% if informacion_tecnica.tipo_usuario|lower == "propietario" %}X{% else %}&nbsp;{% endif %}1</td>
+                        <td class="text-center">{% if informacion_tecnica.tipo_usuario|lower == "propietario" %}X{% else %}&nbsp;{% endif %}1</td>
                         <td colspan="4"><b>INDIVIDUAL</b></td>
                         <td colspan="4"><b>COLECTIVA</b></td>
                     </tr>
                     <tr>
                         <td colspan="2">FISCAL</td>
-                        <td>{% if informacion_tecnica.tipo_propiedad|lower == "fiscal" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.tipo_propiedad|lower == "fiscal" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">ARRENDATARIO</td>
-                        <td>{% if informacion_tecnica.tipo_usuario|lower == "arrendatario" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.tipo_usuario|lower == "arrendatario" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3">PERSONA NATURAL</td>
-                        <td>{% if informacion_tecnica.tipo_usuario|lower == "arrendatario" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.tipo_usuario|lower == "arrendatario" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3">COMUNIDAD (Copropiedad u otros)</td>
-                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "comunidad" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.regimen_propiedad|lower == "comunidad" %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="2">MUNICIPAL</td>
-                        <td>{% if informacion_tecnica.tipo_propiedad|lower == "municipal" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.tipo_propiedad|lower == "municipal" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">USUFRUCTUARIO</td>
-                        <td>{% if informacion_tecnica.tipo_usuario|lower == "usufructuario" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.tipo_usuario|lower == "usufructuario" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3">PERSONA JURÍDICA</td>
-                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "persona juridica" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.regimen_propiedad|lower == "persona juridica" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3">SUCESIÓN</td>
-                        <td>{% if informacion_tecnica.regimen_propiedad|lower == "sucesion" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.regimen_propiedad|lower == "sucesion" %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="8"><b>7.6 AFECTACIÓN ACTUAL</b></td>
@@ -348,12 +348,12 @@
                     </tr>
                     <tr>
                         <td colspan="4">DECLARACIÓN DE UTILIDAD PÚBLICA</td>
-                        <td>{% if informacion_tecnica.afectacion_actual|lower == "declaracion de utilidad publica" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.afectacion_actual|lower == "declaracion de utilidad publica" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="3" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td colspan="4">ANTEJARDÍN</td>
-                        <td>{% if informacion_tecnica.afectacion_actual|lower == "antejardin" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if informacion_tecnica.afectacion_actual|lower == "antejardin" %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                 </tbody>
             </table>
@@ -699,7 +699,7 @@
                         <td colspan="4">Fecha de elaboración ficha: {{ current_time|date:"j-m-Y" }}</td>
                     </tr>
                     <tr>
-                        <td colspan="4">Nombre autor: {{ current_user }}</td>
+                        <td colspan="4">Nombre autor: {{ current_user.first_name }} {{ current_user.last_name }}</td>
                     </tr>
                 </tbody>
             </table>
