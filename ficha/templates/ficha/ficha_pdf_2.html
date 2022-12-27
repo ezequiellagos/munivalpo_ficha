@@ -36,10 +36,17 @@
             .text-right{
                 text-align: right;
             }
+
+            @page {
+                size: letter portrait;
+                margin: 20pt;
+            }
+            table { -pdf-keep-with-next: true; }
+            section { -pdf-keep-with-next: true; }
+            p.separator { -pdf-keep-with-next: false; font-size: 6pt; }
         </style>
     </head>
     <body>
-
         <!-- Sección 1 -->
         <section>
             <table class="special">
@@ -246,6 +253,8 @@
         </section>
 
         </br>
+
+        <p class="separator">&nbsp;<p>
 
         <!-- Sección 7 -->
         <section>
@@ -586,6 +595,8 @@
         </section>
 
         </br>
+
+        <p class="separator">&nbsp;<p>
 
         <!-- Sección 12 -->
         <section>
