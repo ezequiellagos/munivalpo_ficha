@@ -1379,26 +1379,82 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="monumentos_historicos"><b>Monumentos Históricos</b></label>
-                                        <select class="form-control" id="monumentos_historicos" name="monumentos_historicos" >
-                                            <option value="{{ relacion_del_inmueble_con_el_terreno.monumentos_historicos }}" selected>{{ relacion_del_inmueble_con_el_terreno.monumentos_historicos }}</option>
-                                            {% for monumentos_historicos in OPTIONS.INMUEBLES_PATRIMONIALES %}
-                                                <option value="{{ monumentos_historicos.0 }}">{{ monumentos_historicos.1 }}</option>
-                                            {% endfor %}
-                                        </select>
+                                        <label class="form-label"><b>Monumentos Históricos</b></label>
+                                        <table class="table table-bordered table-hover table-sm">
+                                            <tr>
+                                                <td>Predio contiguo:</td>
+                                                <td>
+                                                    <div class="form-check d-flex justify-content-center">
+                                                        <input type="checkbox" class="form-check-input" id="mon_his_predio_contiguo" name="mon_his_predio_contiguo" value="1" {% if relacion_del_inmueble_con_el_terreno.mon_his_predio_contiguo %}checked{% endif %}>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Manzana:</td>
+                                                <td>
+                                                    <div class="form-check d-flex justify-content-center">
+                                                        <input type="checkbox" class="form-check-input" id="mon_his_manzana" name="mon_his_manzana" value="1" {% if relacion_del_inmueble_con_el_terreno.mon_his_manzana %}checked{% endif %}>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Manzana enfrente:</td>
+                                                <td>
+                                                    <div class="form-check d-flex justify-content-center">
+                                                        <input type="checkbox" class="form-check-input" id="mon_his_manzana_enfrente" name="mon_his_manzana_enfrente" value="1" {% if relacion_del_inmueble_con_el_terreno.mon_his_manzana_enfrente %}checked{% endif %}>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Relación visual:</td>
+                                                <td>
+                                                    <div class="form-check d-flex justify-content-center">
+                                                        <input type="checkbox" class="form-check-input" id="mon_his_relacion_visual" name="mon_his_relacion_visual" value="1" {% if relacion_del_inmueble_con_el_terreno.mon_his_relacion_visual %}checked{% endif %}>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label" for="inmuebles_conservacion_historica"><b>Inmuebles de Conservación Histórica</b></label>
-                                        <select class="form-control" id="inmuebles_conservacion_historica" name="inmuebles_conservacion_historica" >
-                                            <option value="{{ relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica }}" selected>{{ relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica }}</option>
-                                            {% for inmuebles_conservacion_historica in OPTIONS.INMUEBLES_PATRIMONIALES %}
-                                                <option value="{{ inmuebles_conservacion_historica.0 }}">{{ inmuebles_conservacion_historica.1 }}</option>
-                                            {% endfor %}
-                                        </select>
+                                        <label class="form-label"><b>Inmuebles de Conservación Histórica</b></label>
+                                        <table class="table table-bordered table-hover table-sm">
+                                            <tr>
+                                                <td>Predio contiguo:</td>
+                                                <td>
+                                                    <div class="form-check d-flex justify-content-center">
+                                                        <input type="checkbox" class="form-check-input" id="inm_con_his_predio_contiguo" name="inm_con_his_predio_contiguo" value="1" {% if relacion_del_inmueble_con_el_terreno.inm_con_his_predio_contiguo %}checked{% endif %}>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Manzana:</td>
+                                                <td>
+                                                    <div class="form-check d-flex justify-content-center">
+                                                        <input type="checkbox" class="form-check-input" id="inm_con_his_manzana" name="inm_con_his_manzana" value="1" {% if relacion_del_inmueble_con_el_terreno.inm_con_his_manzana %}checked{% endif %}>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Manzana enfrente:</td>
+                                                <td>
+                                                    <div class="form-check d-flex justify-content-center">
+                                                        <input type="checkbox" class="form-check-input" id="inm_con_his_manzana_enfrente" name="inm_con_his_manzana_enfrente" value="1" {% if relacion_del_inmueble_con_el_terreno.inm_con_his_manzana_enfrente %}checked{% endif %}>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Relación visual:</td>
+                                                <td>
+                                                    <div class="form-check d-flex justify-content-center">
+                                                        <input type="checkbox" class="form-check-input" id="inm_con_his_relacion_visual" name="inm_con_his_relacion_visual" value="1" {% if relacion_del_inmueble_con_el_terreno.inm_con_his_relacion_visual %}checked{% endif %}>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

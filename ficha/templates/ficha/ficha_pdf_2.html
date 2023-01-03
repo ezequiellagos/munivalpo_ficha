@@ -555,40 +555,40 @@
                         <td colspan="2"><b>FACHADA</b></td>
                         <td colspan="2"><b>CUBIERTA</b></td>
                         <td colspan="2"><b>VIVIENDA</b></td>
-                        <td>{% if aptitud_de_rehabilitacion.vivienda %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if aptitud_de_rehabilitacion.vivienda %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td>BUENO</td>
-                        <td>{% if estado_de_conservacion.inmueble|lower == "bueno" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td>{% if estado_de_conservacion.entorno|lower == "bueno" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td  class="text-center">{% if estado_de_conservacion.inmueble|lower == "bueno" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td  class="text-center">{% if estado_de_conservacion.entorno|lower == "bueno" %}X{% else %}&nbsp;{% endif %}</td>
                         <td style="width: 100px;">SIN MODIFICACIÓN</td>
-                        <td>{% if grado_de_alteracion.fachada|lower == "sin modificacion" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if grado_de_alteracion.fachada|lower == "sin modificacion" %}X{% else %}&nbsp;{% endif %}</td>
                         <td style="width: 100px;">SIN MODIFICACIÓN</td>
-                        <td>{% if grado_de_alteracion.cubierta|lower == "sin modificacion" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if grado_de_alteracion.cubierta|lower == "sin modificacion" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">EQUIPAMIENTO</td>
-                        <td>{% if aptitud_de_rehabilitacion.equipamiento %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if aptitud_de_rehabilitacion.equipamiento %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td>REGULAR</td>
-                        <td>{% if estado_de_conservacion.inmueble|lower == "regular" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td>{% if estado_de_conservacion.entorno|lower == "regular" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if estado_de_conservacion.inmueble|lower == "regular" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if estado_de_conservacion.entorno|lower == "regular" %}X{% else %}&nbsp;{% endif %}</td>
                         <td>POCO MODIFICADO</td>
-                        <td>{% if grado_de_alteracion.fachada|lower == "poco modificado" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if grado_de_alteracion.fachada|lower == "poco modificado" %}X{% else %}&nbsp;{% endif %}</td>
                         <td>POCO MODIFICADO</td>
-                        <td>{% if grado_de_alteracion.cubierta|lower == "poco modificado" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if grado_de_alteracion.cubierta|lower == "poco modificado" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">COMERCIO</td>
-                        <td>{% if aptitud_de_rehabilitacion.comercio %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if aptitud_de_rehabilitacion.comercio %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td>MALO</td>
-                        <td>{% if estado_de_conservacion.inmueble|lower == "malo" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td>{% if estado_de_conservacion.entorno|lower == "malo" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if estado_de_conservacion.inmueble|lower == "malo" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if estado_de_conservacion.entorno|lower == "malo" %}X{% else %}&nbsp;{% endif %}</td>
                         <td>MUY MODIFICADO</td>
-                        <td>{% if grado_de_alteracion.fachada|lower == "muy modificado" %}X{% else %}&nbsp;{% endif %}</td>
-                        <td>MUY MODIFICADO</td>
-                        <td>{% if grado_de_alteracion.cubierta|lower == "muy modificado" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if grado_de_alteracion.fachada|lower == "muy modificado" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">MUY MODIFICADO</td>
+                        <td class="text-center">{% if grado_de_alteracion.cubierta|lower == "muy modificado" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">OTRO: {{ aptitud_de_rehabilitacion.otro_texto }}</td>
-                        <td>{% if aptitud_de_rehabilitacion.otro %}X{% else %}&nbsp;{% endif %}</td>
+                        <td class="text-center">{% if aptitud_de_rehabilitacion.otro %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                 </tbody>
             </table>
@@ -616,20 +616,20 @@
                     </tr>
                     <tr>
                         <td>POR UBICACIÓN</td>
-                        <td style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.imagen_urbana_relevante_por_ubicacion %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.imagen_urbana_relevante_por_ubicacion %}X{% else %}&nbsp;{% endif %}</td>
                         <td>SI</td>
-                        <td style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.forma_parte_de_un_conjunto %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.forma_parte_de_un_conjunto %}X{% else %}&nbsp;{% endif %}</td>
                         <td>COLINDA</td>
-                        <td style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.espacio_publico|lower == "colinda" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.espacio_publico|lower == "colinda" %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2" rowspan="2">(Ej. Placas en fachada, escultura, monumento público, entre otros)</td>
                     </tr>
                     <tr>
                         <td>POR SINGULARIDAD</td>
-                        <td style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.imagen_urbana_relevante_por_singularidad %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.imagen_urbana_relevante_por_singularidad %}X{% else %}&nbsp;{% endif %}</td>
                         <td>NO</td>
-                        <td style="width: 30px;">{% if not relacion_del_inmueble_con_el_terreno.forma_parte_de_un_conjunto %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 30px;" class="text-center">{% if not relacion_del_inmueble_con_el_terreno.forma_parte_de_un_conjunto %}X{% else %}&nbsp;{% endif %}</td>
                         <td>ENFRENTA</td>
-                        <td style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.espacio_publico|lower == "enfrenta" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.espacio_publico|lower == "enfrenta" %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="8"><b>12.5 INMUEBLES PATRIMONIALES CON PROTECCIÓN OFICIAL EN EL ENTORNO</b></td>
@@ -640,27 +640,27 @@
                     </tr>
                     <tr>
                         <td colspan="2">PREDIO CONTIGUO</td>
-                        <td colspan="2" style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.monumentos_historicos|lower == "predio contiguo" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2" style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.mon_his_predio_contiguo %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">PREDIO CONTIGUO</td>
-                        <td colspan="2" style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica|lower == "predio contiguo" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2" style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.inm_con_his_predio_contiguo %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="2">MANZANA</td>
-                        <td colspan="2" style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.monumentos_historicos|lower == "manzana" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2" style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.mon_his_manzana %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">MANZANA</td>
-                        <td colspan="2" style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica|lower == "manzana" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2" style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.inm_con_his_manzana %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="2">MANZANA ENFRENTE</td>
-                        <td colspan="2" style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.monumentos_historicos|lower == "manzana enfrente" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2" style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.mon_his_manzana_enfrente %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">MANZANA ENFRENTE</td>
-                        <td colspan="2" style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica|lower == "manzana enfrente" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2" style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.inm_con_his_manzana_enfrente %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="2">RELACIÓN VISUAL</td>
-                        <td colspan="2" style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.monumentos_historicos|lower == "relacion visual" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2" style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.mon_his_relacion_visual %}X{% else %}&nbsp;{% endif %}</td>
                         <td colspan="2">RELACIÓN VISUAL</td>
-                        <td colspan="2" style="width: 30px;">{% if relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica|lower == "relacion visual" %}X{% else %}&nbsp;{% endif %}</td>
+                        <td colspan="2" style="width: 30px;" class="text-center">{% if relacion_del_inmueble_con_el_terreno.inm_con_his_relacion_visual %}X{% else %}&nbsp;{% endif %}</td>
                     </tr>
                     <tr>
                         <td colspan="8"><b>12.6 OBSERVACIONES CONTEXTO URBANO / CONDICIONES GEOGRÁFICAS</b></td>

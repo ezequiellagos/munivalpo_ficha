@@ -403,8 +403,51 @@ def editar_ficha(request, id = 0):
             relacion_del_inmueble_con_el_terreno.forma_parte_de_un_conjunto = True
         
         relacion_del_inmueble_con_el_terreno.espacio_publico = request.POST.get('espacio_publico')
-        relacion_del_inmueble_con_el_terreno.monumentos_historicos = request.POST.get('monumentos_historicos')
-        relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica = request.POST.get('inmuebles_conservacion_historica')
+        # relacion_del_inmueble_con_el_terreno.monumentos_historicos = request.POST.get('monumentos_historicos')
+        # relacion_del_inmueble_con_el_terreno.inmuebles_conservacion_historica = request.POST.get('inmuebles_conservacion_historica')
+
+        # 12.5 Monumentos históricos
+        if not request.POST.get('mon_his_predio_contiguo'):
+            relacion_del_inmueble_con_el_terreno.mon_his_predio_contiguo = False
+        elif request.POST.get('mon_his_predio_contiguo') and request.POST.get('mon_his_predio_contiguo') == '1':
+            relacion_del_inmueble_con_el_terreno.mon_his_predio_contiguo = True
+
+        if not request.POST.get('mon_his_manzana'):
+            relacion_del_inmueble_con_el_terreno.mon_his_manzana = False
+        elif request.POST.get('mon_his_manzana') and request.POST.get('mon_his_manzana') == '1':
+            relacion_del_inmueble_con_el_terreno.mon_his_manzana = True
+
+        if not request.POST.get('mon_his_manzana_enfrente'):
+            relacion_del_inmueble_con_el_terreno.mon_his_manzana_enfrente = False
+        elif request.POST.get('mon_his_manzana_enfrente') and request.POST.get('mon_his_manzana_enfrente') == '1':
+            relacion_del_inmueble_con_el_terreno.mon_his_manzana_enfrente = True
+
+        if not request.POST.get('mon_his_relacion_visual'):
+            relacion_del_inmueble_con_el_terreno.mon_his_relacion_visual = False
+        elif request.POST.get('mon_his_relacion_visual') and request.POST.get('mon_his_relacion_visual') == '1':
+            relacion_del_inmueble_con_el_terreno.mon_his_relacion_visual = True
+
+        # 12.5 Inmuebles de conservación histórica
+        if not request.POST.get('inm_con_his_predio_contiguo'):
+            relacion_del_inmueble_con_el_terreno.inm_con_his_predio_contiguo = False
+        elif request.POST.get('inm_con_his_predio_contiguo') and request.POST.get('inm_con_his_predio_contiguo') == '1':
+            relacion_del_inmueble_con_el_terreno.inm_con_his_predio_contiguo = True
+
+        if not request.POST.get('inm_con_his_manzana'):
+            relacion_del_inmueble_con_el_terreno.inm_con_his_manzana = False
+        elif request.POST.get('inm_con_his_manzana') and request.POST.get('inm_con_his_manzana') == '1':
+            relacion_del_inmueble_con_el_terreno.inm_con_his_manzana = True
+        
+        if not request.POST.get('inm_con_his_manzana_enfrente'):
+            relacion_del_inmueble_con_el_terreno.inm_con_his_manzana_enfrente = False
+        elif request.POST.get('inm_con_his_manzana_enfrente') and request.POST.get('inm_con_his_manzana_enfrente') == '1':
+            relacion_del_inmueble_con_el_terreno.inm_con_his_manzana_enfrente = True
+
+        if not request.POST.get('inm_con_his_relacion_visual'):
+            relacion_del_inmueble_con_el_terreno.inm_con_his_relacion_visual = False
+        elif request.POST.get('inm_con_his_relacion_visual') and request.POST.get('inm_con_his_relacion_visual') == '1':
+            relacion_del_inmueble_con_el_terreno.inm_con_his_relacion_visual = True
+
         relacion_del_inmueble_con_el_terreno.observaciones = request.POST.get('espacio_publico_observaciones')
         relacion_del_inmueble_con_el_terreno.save()
 

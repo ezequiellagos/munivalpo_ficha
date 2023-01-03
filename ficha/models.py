@@ -443,8 +443,19 @@ class RelacionDelInmuebleConElTerreno(models.Model):
 
     espacio_publico = models.CharField(max_length=50, choices=ESPACIO_PUBLICO, default='COLINDA', blank=True)
 
+    # No usar
     monumentos_historicos = models.CharField(max_length=50, choices=INMUEBLES_PATRIMONIALES, default='PREDIO CONTIGUO', blank=True)
     inmuebles_conservacion_historica = models.CharField(max_length=50, choices=INMUEBLES_PATRIMONIALES, default='PREDIO CONTIGUO', blank=True)
+
+    mon_his_predio_contiguo = models.BooleanField(default=False)
+    mon_his_manzana = models.BooleanField(default=False)
+    mon_his_manzana_enfrente = models.BooleanField(default=False)
+    mon_his_relacion_visual = models.BooleanField(default=False)
+
+    inm_con_his_predio_contiguo = models.BooleanField(default=False)
+    inm_con_his_manzana = models.BooleanField(default=False)
+    inm_con_his_manzana_enfrente = models.BooleanField(default=False)
+    inm_con_his_relacion_visual = models.BooleanField(default=False)
 
     observaciones = models.TextField(blank=True, default='')
 
