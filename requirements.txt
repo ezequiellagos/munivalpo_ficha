@@ -10,7 +10,7 @@ cssselect2==0.7.0
 Django==3.2.25
 django-auditlog==2.2.1
 future==0.18.3
-gunicorn==20.1.0
+gunicorn==22.0.0
 html5lib==1.1
 idna==3.4
 lxml==4.9.1
